@@ -4,14 +4,13 @@ export const site = {
   app: process.env.NEXT_PUBLIC_APP_URL ?? "https://app.drumreel.com",
   email: "hello@drumreel.com",
   support: "drumreel@mubashirjamali.com",
-  tagline: "Describe the walkthrough. Get the MP4.",
+  tagline: "Replace 95% of your Looms.",
   description:
-    "Point Drumreel at a public HTTPS staging URL. Write what a customer should see. We drive the product, record a clean MP4, and drop it in your library. 50 credits after you verify email.",
+    "Drumreel logs into your public staging URL, rehearses the flow, records Chromium, then masters ElevenLabs narration and a talking avatar onto the MP4. Re-film a saved script without burning another AI planner run.",
 };
 
 export const signupUrl = `${site.app.replace(/\/$/, "")}/signup`;
 export const loginUrl = `${site.app.replace(/\/$/, "")}/login`;
-export const pricingUrl = `${site.app.replace(/\/$/, "")}/#pricing`;
 
 export const plans = [
   {
@@ -20,7 +19,7 @@ export const plans = [
     price: "$0",
     period: "to start",
     credits: "50 credits after email verify",
-    blurb: "One short walkthrough on us. No card to try.",
+    blurb: "One real walkthrough on us. No card.",
     cta: "Start free",
     href: signupUrl,
     featured: false,
@@ -65,4 +64,18 @@ export const packs = [
   { name: "1,500 credits", price: "$25" },
   { name: "3,500 credits", price: "$50" },
   { name: "8,000 credits", price: "$100" },
+] as const;
+
+export const hosts = [
+  { id: "sarah", name: "Sarah", role: "Product host", file: "/avatars/sarah.jpg" },
+  { id: "alex", name: "Alex", role: "Dev advocate", file: "/avatars/alex.jpg" },
+  { id: "marcus", name: "Marcus", role: "Enterprise", file: "/avatars/marcus.jpg" },
+  { id: "elena", name: "Elena", role: "Launch story", file: "/avatars/elena.jpg" },
+] as const;
+
+export const voices = [
+  { id: "rachel", name: "Rachel", tone: "Calm · American", engine: "Eleven Multilingual v2", file: "/avatars/sarah.jpg" },
+  { id: "adam", name: "Adam", tone: "Deep · American", engine: "Eleven Turbo v2.5", file: "/avatars/adam.jpg" },
+  { id: "antoni", name: "Antoni", tone: "Sales · American", engine: "Eleven Multilingual v2", file: "/avatars/antoni.jpg" },
+  { id: "bella", name: "Bella", tone: "Warm · American", engine: "Eleven Multilingual v2", file: "/avatars/bella.jpg" },
 ] as const;

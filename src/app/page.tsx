@@ -2,33 +2,33 @@ import Image from "next/image";
 import { Cta, CtaGhost } from "@/components/cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { ProductMock } from "@/components/product-mock";
-import { packs, plans, site } from "@/lib/site";
+import { PlayerShot, RunShot, StudioShot } from "@/components/shots";
+import { hosts, packs, plans, site, voices } from "@/lib/site";
 
 const faqs = [
   {
+    q: "How is this not Loom?",
+    a: "Loom needs you on camera, clicking every time. Drumreel drives the live product, rehearses, films Chromium, then lays ElevenLabs + a talking avatar on the MP4. Re-run the saved script after a UI tweak without sitting through it again.",
+  },
+  {
+    q: "Do re-records burn more AI tokens?",
+    a: "The planner writes the scenario once. Script re-record replays that YAML — no second authoring pass. You pay record/compute, not another exploration.",
+  },
+  {
+    q: "ElevenLabs and avatars are included?",
+    a: "They are first-class in Studio HD. Voiceover is ElevenLabs neural audio (+15 credits). Circular talking avatar is picture-in-picture (+25). Both off until you turn them on.",
+  },
+  {
     q: "How long does a run take?",
-    a: "A typical public site is 8–25 minutes. The worker hard-stops at 45. This is a real browser recording, not a 12-second AI slideshow.",
+    a: "A typical public site is 8–25 minutes. Hard stop at 45. This is a real browser, not a 12-second slideshow.",
   },
   {
-    q: "Does it work on my localhost app?",
-    a: "No. The worker only records public HTTPS URLs. Point it at staging, not 127.0.0.1, and not a VPN-only host.",
+    q: "Localhost?",
+    a: "Public HTTPS staging only. Put a disposable demo login in the brief if the flow needs auth.",
   },
   {
-    q: "Can it log in?",
-    a: "Yes, if you put a test account in the brief. Use a disposable demo user. Do not send production admin passwords you cannot rotate.",
-  },
-  {
-    q: "What do credits cost?",
-    a: "A plain run reserves about 25 credits. Voiceover adds 15. Avatar adds 25. You are charged the settled amount when the MP4 is stored. Failed or cancelled runs before that are refunded.",
-  },
-  {
-    q: "Do I need a card to try it?",
-    a: "No. Verify email, get 50 credits, run one short walkthrough. Paid packs and plans are Stripe Checkout.",
-  },
-  {
-    q: "Who sees the target site?",
-    a: "An isolated worker on our host. You must be allowed to record that URL. We send screenshots and the brief to the AI model that authors the script (OpenAI by default).",
+    q: "Card to try?",
+    a: "No. Verify email, get 50 credits, run one walkthrough. Stripe after that.",
   },
 ];
 
@@ -38,164 +38,253 @@ export default function Home() {
       <Header />
       <main>
         <section className="relative overflow-hidden">
-          <Image
-            src="/hero.jpg"
-            alt=""
-            fill
-            priority
-            className="object-cover opacity-35"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/70 to-ink" />
-          <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-20 md:pb-32 md:pt-28">
-            <p className="text-sm tracking-[0.2em] text-amber uppercase">Product demos, recorded for you</p>
-            <h1 className="serif mt-6 max-w-3xl text-5xl leading-[1.05] tracking-tight md:text-7xl">
-              Describe the walkthrough.
-              <span className="italic text-amber-2"> Get the MP4.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream-dim">
-              Paste a public staging URL. Write what a buyer should see. Drumreel drives the live product,
-              films it, and puts a shareable video in your library.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Cta />
-              <CtaGhost href="#pricing">See pricing</CtaGhost>
+          <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 top-40 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl" />
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-16 lg:grid-cols-[1fr_1.05fr] lg:pt-20">
+            <div>
+              <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-3 py-1 text-xs text-amber-2">
+                AI camera crew for your product
+              </p>
+              <h1 className="serif mt-6 text-4xl leading-[1.08] tracking-tight md:text-6xl">
+                Ditch 95% of your Looms.
+                <span className="block text-amber-2">Describe it. We film it.</span>
+              </h1>
+              <p className="mt-5 max-w-lg text-lg leading-relaxed text-cream-dim">
+                Drumreel logs into your staging URL, rehearses the path, records the live app, then masters
+                <strong className="font-medium text-cream"> ElevenLabs narration</strong> and a{" "}
+                <strong className="font-medium text-cream">talking avatar</strong> onto the MP4 — while you do something else.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Cta>Start free — 50 credits</Cta>
+                <CtaGhost href="#studio">See the studio</CtaGhost>
+              </div>
+              <p className="mt-4 text-sm text-cream-dim">No card. Re-record a saved script without a new planner run.</p>
             </div>
-            <p className="mt-5 text-sm text-cream-dim">
-              No card to start. 50 credits after you verify email. Usually 8–25 minutes per run.
-            </p>
+            <StudioShot />
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 pb-24">
-          <ProductMock />
-        </section>
-
         <section className="border-y border-line bg-ink-2">
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-3">
             {[
-              ["Founders", "Ship a current demo without blocking Friday on Loom."],
-              ["Sales", "Send a clean walkthrough instead of a 40-minute Zoom."],
-              ["CS & success", "Record the same flow after every release, without a studio."],
-            ].map(([title, body]) => (
-              <div key={title}>
-                <h2 className="text-sm tracking-[0.16em] text-amber uppercase">{title}</h2>
-                <p className="serif mt-3 text-2xl leading-snug">{body}</p>
+              ["You never click it twice", "Explore → author → rehearse → record. The scenario is saved."],
+              ["ElevenLabs on the take", "Neural HD voiceover, not you clearing your throat on take 9."],
+              ["Avatar in the corner", "Circular talking host, any corner, composited on the final MP4."],
+            ].map(([t, b]) => (
+              <div key={t}>
+                <h2 className="text-sm font-semibold text-cream">{t}</h2>
+                <p className="mt-2 text-sm text-cream-dim">{b}</p>
               </div>
             ))}
           </div>
         </section>
 
+        <section id="output" className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">The MP4</p>
+              <h2 className="serif mt-3 text-4xl md:text-5xl">A product recording with a host — not a talking head in a bubble.</h2>
+              <p className="mt-4 text-cream-dim">
+                Chromium walks the real UI. ffmpeg lays the voice. The avatar sits on the glass as a circular
+                presenter. Share the file or a revocable link.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm text-cream-dim">
+                <li>· Picture-in-picture: Sarah, Alex, Marcus, or Elena</li>
+                <li>· Voices: Rachel, Adam, Antoni, Bella · ElevenLabs</li>
+                <li>· Corner placement: any of the four</li>
+              </ul>
+            </div>
+            <PlayerShot />
+          </div>
+        </section>
+
+        <section id="studio" className="bg-ink-2">
+          <div className="mx-auto max-w-6xl px-6 py-24">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">Studio HD</p>
+            <h2 className="serif mt-3 max-w-3xl text-4xl md:text-5xl">ElevenLabs + talking avatar are not an afterthought.</h2>
+            <p className="mt-4 max-w-2xl text-cream-dim">
+              Toggle neural narration and a circular host before you queue. The worker authors the walkthrough,
+              records the live app, then composites audio and PiP on the final render.
+            </p>
+            <div className="mt-12 grid gap-10 lg:grid-cols-2">
+              <div>
+                <h3 className="text-sm font-semibold">Hosts</h3>
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  {hosts.map((h) => (
+                    <div key={h.id} className="flex items-center gap-3 rounded-xl border border-line bg-ink p-3">
+                      <Image src={h.file} alt={h.name} width={56} height={56} className="h-14 w-14 rounded-full object-cover" />
+                      <div>
+                        <p className="font-medium">{h.name}</p>
+                        <p className="text-xs text-cream-dim">{h.role}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold">ElevenLabs voices</h3>
+                <div className="mt-4 grid gap-3">
+                  {voices.map((v) => (
+                    <div key={v.id} className="flex items-center gap-3 rounded-xl border border-line bg-ink p-3">
+                      <Image src={v.file} alt={v.name} width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
+                      <div className="min-w-0 flex-1">
+                        <p className="font-medium">{v.name}</p>
+                        <p className="truncate text-xs text-cream-dim">
+                          {v.tone} · {v.engine}
+                        </p>
+                      </div>
+                      <span className="text-[10px] uppercase tracking-wide text-indigo-300">HD</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="rerun" className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <RunShot />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">Efficiency</p>
+              <h2 className="serif mt-3 text-4xl md:text-5xl">Rehearse and re-film. Don’t re-think.</h2>
+              <p className="mt-4 text-cream-dim">
+                The expensive part is the planner: explore the live site and write the scenario. Drumreel keeps
+                that YAML. Script re-record drives the same clicks again — no second authoring pass, no wasted
+                tokens when a button moved 8px.
+              </p>
+              <div className="mt-8 grid gap-3 text-sm">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <p className="font-medium text-cream">Full run</p>
+                  <p className="text-cream-dim">Explore + author + rehearse + record. Use when the flow changed.</p>
+                </div>
+                <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+                  <p className="font-medium text-emerald">Script re-record</p>
+                  <p className="text-cream-dim">Replay the saved scenario. Same demo, new take, planner idle.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="loom" className="border-y border-line bg-ink-2">
+          <div className="mx-auto max-w-6xl px-6 py-24">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">vs Loom</p>
+            <h2 className="serif mt-3 text-4xl">Keep Loom for the 5% that needs your face in a cafe.</h2>
+            <p className="mt-3 max-w-2xl text-cream-dim">
+              Product tours, onboarding, release notes, sales walkthroughs — that’s the 95%. Drumreel films the
+              app so you don’t.
+            </p>
+            <div className="mt-10 overflow-x-auto rounded-2xl border border-line">
+              <table className="w-full min-w-[36rem] text-left text-sm">
+                <thead className="bg-ink text-cream-dim">
+                  <tr>
+                    <th className="px-4 py-3 font-medium"> </th>
+                    <th className="px-4 py-3 font-medium">Loom</th>
+                    <th className="px-4 py-3 font-medium text-amber-2">Drumreel</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-line">
+                  {[
+                    ["Who clicks the product", "You, every take", "The worker, on staging"],
+                    ["Voice", "You, live", "ElevenLabs neural HD"],
+                    ["On-screen host", "Your webcam", "Circular talking avatar, any corner"],
+                    ["Missed a click", "Record the whole thing again", "Script re-record, no new planner tokens"],
+                    ["After a release", "Stale the same day", "Re-run the saved scenario"],
+                    ["You on camera", "Required", "Optional. Go do real work."],
+                  ].map(([row, loom, us]) => (
+                    <tr key={row}>
+                      <td className="px-4 py-3 text-cream-dim">{row}</td>
+                      <td className="px-4 py-3 text-cream-dim">{loom}</td>
+                      <td className="px-4 py-3 text-cream">{us}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <section id="how" className="mx-auto max-w-6xl px-6 py-24">
-          <p className="text-sm tracking-[0.2em] text-amber uppercase">How it works</p>
-          <h2 className="serif mt-4 max-w-2xl text-4xl md:text-5xl">Three steps. No timeline editor.</h2>
-          <ol className="mt-14 grid gap-8 md:grid-cols-3">
+          <h2 className="serif text-4xl">Four beats. One queue.</h2>
+          <ol className="mt-10 grid gap-6 md:grid-cols-4">
             {[
-              ["01", "You write the brief", "URL plus the path a customer takes. Include a test login if the flow needs one."],
-              ["02", "We drive the product", "The worker maps live pages, authors a scenario, rehearses, then records Chromium."],
-              ["03", "You get the MP4", "Download it or share a link. Revoke the link when you are done."],
-            ].map(([n, title, body]) => (
-              <li key={n} className="border-t border-line pt-6">
-                <p className="font-mono text-xs text-amber">{n}</p>
-                <h3 className="mt-3 text-xl">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-cream-dim">{body}</p>
+              ["01", "Brief", "Public HTTPS URL + the path a buyer takes."],
+              ["02", "Plan & rehearse", "AI writes the scenario, then dry-runs it."],
+              ["03", "Record", "Chromium films the live product."],
+              ["04", "Master", "ElevenLabs + avatar composited. MP4 in the library."],
+            ].map(([n, t, b]) => (
+              <li key={n} className="rounded-2xl border border-line p-5">
+                <p className="font-mono text-xs text-indigo-300">{n}</p>
+                <h3 className="mt-2 text-lg">{t}</h3>
+                <p className="mt-2 text-sm text-cream-dim">{b}</p>
               </li>
             ))}
           </ol>
         </section>
 
-        <section className="bg-ink-2">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-            <div>
-              <p className="text-sm tracking-[0.2em] text-amber uppercase">Honest limits</p>
-              <h2 className="serif mt-4 text-4xl">Built for public staging, not magic.</h2>
-              <ul className="mt-8 space-y-4 text-cream-dim">
-                <li>Public HTTPS only. No localhost, no private VPC, no cloud metadata.</li>
-                <li>One recording at a time on the first machine. Jobs are minutes, not seconds.</li>
-                <li>Voiceover and talking avatar are optional add-ons, off by default.</li>
-                <li>You must be allowed to capture the site you submit.</li>
-              </ul>
-              <div className="mt-10">
-                <Cta>Try it on staging</Cta>
-              </div>
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-2xl border border-line">
-              <Image src="/still-reel.jpg" alt="Film reel against a laptop — Drumreel records the product like a camera crew." fill className="object-cover" sizes="(min-width: 1024px) 28rem, 100vw" />
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" className="mx-auto max-w-6xl px-6 py-24">
-          <p className="text-sm tracking-[0.2em] text-amber uppercase">Pricing</p>
-          <h2 className="serif mt-4 text-4xl md:text-5xl">Credits, not fake video quotas.</h2>
-          <p className="mt-4 max-w-xl text-cream-dim">
-            Monthly plans grant credits on each paid Stripe invoice. Extra packs are one-time Checkout.
-            Credits land only after payment succeeds.
-          </p>
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {plans.map((plan) => (
-              <article
-                key={plan.id}
-                className={`flex flex-col rounded-2xl border p-6 ${plan.featured ? "border-amber bg-ink-2" : "border-line"}`}
-              >
-                <h3 className="text-sm tracking-wide text-cream-dim">{plan.name}</h3>
-                <p className="serif mt-3 text-4xl">
-                  {plan.price}
-                  <span className="text-lg text-cream-dim">{plan.period}</span>
-                </p>
-                <p className="mt-3 text-sm text-cream">{plan.credits}</p>
-                <p className="mt-2 flex-1 text-sm text-cream-dim">{plan.blurb}</p>
-                <a
-                  href={plan.href}
-                  className={`mt-6 inline-flex justify-center rounded-full px-4 py-2 text-sm ${
-                    plan.featured ? "bg-cream text-ink hover:bg-amber-2" : "border border-line text-cream hover:border-cream-dim"
-                  }`}
+        <section id="pricing" className="border-t border-line bg-ink-2">
+          <div className="mx-auto max-w-6xl px-6 py-24">
+            <h2 className="serif text-4xl md:text-5xl">Credits. Real Stripe. No fake video quotas.</h2>
+            <p className="mt-3 max-w-xl text-cream-dim">
+              ~25 credits for a plain run. +15 ElevenLabs. +25 avatar. Script re-records skip the planner.
+            </p>
+            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {plans.map((plan) => (
+                <article
+                  key={plan.id}
+                  className={`flex flex-col rounded-2xl border p-6 ${plan.featured ? "border-indigo-400 bg-ink" : "border-line"}`}
                 >
-                  {plan.cta}
-                </a>
-              </article>
-            ))}
-          </div>
-          <div className="mt-10 rounded-2xl border border-line px-6 py-5">
-            <p className="text-sm text-cream-dim">One-time top-ups if you do not want a subscription</p>
-            <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+                  <h3 className="text-sm text-cream-dim">{plan.name}</h3>
+                  <p className="serif mt-3 text-4xl">
+                    {plan.price}
+                    <span className="text-lg text-cream-dim">{plan.period}</span>
+                  </p>
+                  <p className="mt-3 text-sm">{plan.credits}</p>
+                  <p className="mt-2 flex-1 text-sm text-cream-dim">{plan.blurb}</p>
+                  <a
+                    href={plan.href}
+                    className={`mt-6 inline-flex justify-center rounded-full px-4 py-2 text-sm ${
+                      plan.featured ? "bg-cream text-ink hover:bg-amber-2" : "border border-line hover:border-cream-dim"
+                    }`}
+                  >
+                    {plan.cta}
+                  </a>
+                </article>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-cream-dim">
               {packs.map((pack) => (
                 <span key={pack.name}>
-                  <span className="text-cream">{pack.name}</span>
-                  <span className="text-cream-dim"> · {pack.price}</span>
+                  <span className="text-cream">{pack.name}</span> · {pack.price}
                 </span>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="faq" className="border-t border-line">
-          <div className="mx-auto max-w-3xl px-6 py-24">
-            <h2 className="serif text-4xl">Before you paste a URL</h2>
-            <dl className="mt-12 space-y-8">
-              {faqs.map((item) => (
-                <div key={item.q} className="border-t border-line pt-6">
-                  <dt className="text-lg">{item.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-cream-dim">{item.a}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+        <section id="faq" className="mx-auto max-w-3xl px-6 py-24">
+          <h2 className="serif text-4xl">FAQ</h2>
+          <dl className="mt-10 space-y-8">
+            {faqs.map((item) => (
+              <div key={item.q} className="border-t border-line pt-6">
+                <dt className="text-lg">{item.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-cream-dim">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
-        <section className="border-t border-line bg-ink-2">
+        <section className="border-t border-line bg-gradient-to-br from-indigo-950 via-ink-2 to-ink">
           <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-            <h2 className="serif text-4xl md:text-5xl">Stop re-recording the same demo.</h2>
+            <h2 className="serif text-4xl md:text-5xl">Stop performing the same demo.</h2>
             <p className="mx-auto mt-4 max-w-lg text-cream-dim">
-              Verify your email, spend the 50 credits on a real staging URL, and keep the MP4 if it earns
-              the next call.
+              Queue it. Get the MP4 with a host and a real voice. Re-film the script when the product moves.
             </p>
             <div className="mt-10 flex justify-center">
-              <Cta>Start free</Cta>
+              <Cta>Replace your next Loom</Cta>
             </div>
-            <p className="mt-4 text-xs text-cream-dim">
-              Studio lives at app.drumreel.com · questions to {site.email}
-            </p>
+            <p className="mt-4 text-xs text-cream-dim">{site.email}</p>
           </div>
         </section>
       </main>

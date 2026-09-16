@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.domain,
     siteName: "Drumreel",
-    title: "Describe the walkthrough. Get the MP4.",
+    title: "Ditch 95% of your Looms. Drumreel films the product.",
     description: site.description,
   },
   twitter: {

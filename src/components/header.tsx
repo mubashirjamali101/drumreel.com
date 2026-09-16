@@ -10,15 +10,18 @@ export function Header() {
           <Mark />
           <span className="text-sm tracking-wide">Drumreel</span>
         </Link>
-        <nav className="hidden items-center gap-8 text-sm text-cream-dim md:flex">
-          <a href="#how" className="hover:text-cream">
-            How it works
+        <nav className="hidden items-center gap-7 text-sm text-cream-dim md:flex">
+          <a href="#studio" className="hover:text-cream">
+            Studio
+          </a>
+          <a href="#rerun" className="hover:text-cream">
+            Re-record
+          </a>
+          <a href="#loom" className="hover:text-cream">
+            vs Loom
           </a>
           <a href="#pricing" className="hover:text-cream">
             Pricing
-          </a>
-          <a href="#faq" className="hover:text-cream">
-            FAQ
           </a>
         </nav>
         <div className="flex items-center gap-3">
