@@ -1,0 +1,23 @@
+import Link from "next/link";
+import { Cta } from "@/components/cta";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+
+export default function NotFound() {
+  return (
+    <>
+      <Header />
+      <main className="mx-auto max-w-xl px-6 py-32 text-center">
+        <p className="text-sm tracking-[0.2em] text-amber uppercase">404</p>
+        <h1 className="serif mt-4 text-4xl">That page is not on this reel.</h1>
+        <div className="mt-8 flex justify-center gap-3">
+          <Link href="/" className="rounded-full border border-line px-5 py-3 text-sm text-cream-dim hover:text-cream">
+            Home
+          </Link>
+          <Cta />
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
