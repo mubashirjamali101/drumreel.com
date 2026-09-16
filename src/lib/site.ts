@@ -5,7 +5,7 @@ export const site = {
   support: "drumreel@mubashirjamali.com",
   tagline: "The AI camera crew for your product.",
   description:
-    "Drumreel logs into your staging URL, rehearses the flow, records the live app, then masters ElevenLabs narration and a talking avatar onto the MP4. Re-film a saved script without burning another planner run. Join the waitlist.",
+    "Write a prompt. Drumreel films your live product and sends an MP4 — with an optional host and studio voice. Join the waitlist.",
 };
 
 export const hosts = [

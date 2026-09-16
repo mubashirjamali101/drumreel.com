@@ -2,27 +2,27 @@ import Image from "next/image";
 import { Cta, CtaGhost } from "@/components/cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { FilmCard } from "@/components/film-card";
 import { PromptStage } from "@/components/prompt-stage";
-import { PlayerShot, RunShot, StudioShot } from "@/components/shots";
 import { WaitlistForm } from "@/components/waitlist-form";
 import { hosts, site, voices } from "@/lib/site";
 
 const faqs = [
   {
     q: "How is this not Loom?",
-    a: "Loom needs you on camera, clicking every time. Drumreel drives the live product, rehearses, films Chromium, then lays ElevenLabs and a talking avatar on the MP4. Re-run the saved script after a UI tweak without sitting through it again.",
+    a: "You don’t have to click through the product or sit on camera. You write what to show. Drumreel sends back a finished video.",
   },
   {
-    q: "Do re-records burn more AI tokens?",
-    a: "The planner writes the scenario once. Script re-record replays that YAML — no second authoring pass. You pay record and compute, not another exploration.",
+    q: "What if I need another take?",
+    a: "Ask for it. Same walkthrough, new video. You don’t start over from a blank recording.",
   },
   {
-    q: "ElevenLabs and avatars?",
-    a: "First-class in Studio HD. Neural HD voiceover and a circular talking host, composited on the final render. Off until you turn them on.",
+    q: "Can it talk and show a host?",
+    a: "Yes, if you want. Pick a voice and a presenter, or leave both off. Your product stays the star.",
   },
   {
     q: "When can I use it?",
-    a: "Studio is coming soon. Join the waitlist. No pricing yet — we’ll write when seats open.",
+    a: "Soon. Join the waitlist and we’ll write when a seat opens.",
   },
 ];
 
@@ -40,8 +40,8 @@ export default function Home() {
               <span className="italic text-cream-dim"> Get the video.</span>
             </h1>
             <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-cream-dim">
-              You describe the flow. Drumreel logs in, clicks the product, records Chromium, then masters
-              ElevenLabs and a talking avatar onto the MP4.
+              You describe the flow. Drumreel films your live product, adds a host and a studio voice if you
+              want, and sends the MP4.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Cta>Join waitlist</Cta>
@@ -56,9 +56,9 @@ export default function Home() {
         <section className="border-y border-line">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <p className="max-w-2xl text-lg leading-relaxed text-cream-dim">
-              Loom made you the camera operator. Drumreel is the crew: it clicks the product, speaks in a
-              neural voice, puts a host in the corner, and keeps the scenario so the next take is cheap.
-              Keep Loom for the 5% that needs your face in a cafe.
+              Loom made you the camera operator. Drumreel is the crew. You write the prompt. You get a
+              walkthrough of the real product — with a host and a voice, if you want. Keep Loom for the 5%
+              that needs your face in a cafe.
             </p>
           </div>
         </section>
@@ -66,30 +66,40 @@ export default function Home() {
         <section id="product" className="mx-auto max-w-6xl space-y-28 px-6 py-28">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <p className="font-mono text-[11px] text-cream-dim">01 · studio hd</p>
-              <h2 className="serif mt-3 text-4xl md:text-5xl">Paste a URL. Leave.</h2>
+              <p className="font-mono text-[11px] text-cream-dim">01</p>
+              <h2 className="serif mt-3 text-4xl md:text-5xl">You write it. We send the video.</h2>
               <p className="mt-4 text-cream-dim">
-                Public staging, a brief, optional ElevenLabs, optional circular avatar. The worker explores,
-                authors, rehearses, then records Chromium.
+                A public link and a sentence are enough. Go do something else. The walkthrough shows up as an
+                MP4.
               </p>
             </div>
-            <StudioShot />
+            <FilmCard
+              src="/demos/signup.mp4"
+              poster="/demos/signup.jpg"
+              avatar="/avatars/sarah.jpg"
+              caption="signup-flow.mp4"
+            />
           </div>
 
           <div className="grid items-center gap-14 lg:grid-cols-2">
-            <PlayerShot />
-            <div className="lg:order-first lg:col-start-2 lg:row-start-1">
-              <p className="font-mono text-[11px] text-cream-dim">02 · the mp4</p>
-              <h2 className="serif mt-3 text-4xl md:text-5xl">A host on the glass. A real voice.</h2>
+            <FilmCard
+              src="/demos/gallery.mp4"
+              poster="/demos/gallery.jpg"
+              avatar="/avatars/elena.jpg"
+              caption="gallery-tour.mp4"
+            />
+            <div>
+              <p className="font-mono text-[11px] text-cream-dim">02</p>
+              <h2 className="serif mt-3 text-4xl md:text-5xl">A host and a voice. Not your webcam.</h2>
               <p className="mt-4 text-cream-dim">
-                Not you in a bubble. The product fills the frame. Sarah (or Alex, Marcus, Elena) sits
-                picture-in-picture. Rachel, Adam, Antoni, or Bella speak through ElevenLabs.
+                Your product fills the frame. A presenter sits in the corner. A studio voice talks over it.
+                Optional, both of them.
               </p>
             </div>
           </div>
 
           <div>
-            <p className="font-mono text-[11px] text-cream-dim">voices · hosts</p>
+            <p className="font-mono text-[11px] text-cream-dim">hosts · voices</p>
             <div className="mt-8 grid gap-10 md:grid-cols-2">
               <ul className="grid grid-cols-2 gap-4">
                 {hosts.map((h) => (
@@ -109,7 +119,7 @@ export default function Home() {
                       <Image src={v.file} alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
                       {v.name}
                     </span>
-                    <span className="font-mono text-[11px] text-cream-dim">{v.engine}</span>
+                    <span className="text-xs text-cream-dim">{v.tone.split(" · ")[0]}</span>
                   </li>
                 ))}
               </ul>
@@ -118,14 +128,18 @@ export default function Home() {
 
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <p className="font-mono text-[11px] text-cream-dim">03 · rehearse · re-record</p>
-              <h2 className="serif mt-3 text-4xl md:text-5xl">The expensive thought happens once.</h2>
+              <p className="font-mono text-[11px] text-cream-dim">03</p>
+              <h2 className="serif mt-3 text-4xl md:text-5xl">A new take. Not a new afternoon.</h2>
               <p className="mt-4 text-cream-dim">
-                Exploring and authoring is the token burn. We save the YAML. Script re-record drives the same
-                clicks again — no second planner pass when a button moved eight pixels.
+                Product moved? Ask for another take of the same walkthrough. You don’t sit through it again.
               </p>
             </div>
-            <RunShot />
+            <FilmCard
+              src="/demos/filters.mp4"
+              poster="/demos/filters.jpg"
+              avatar="/avatars/alex.jpg"
+              caption="filters-bugfix.mp4"
+            />
           </div>
         </section>
 
@@ -146,11 +160,11 @@ export default function Home() {
                 </thead>
                 <tbody className="text-cream-dim">
                   {[
-                    ["Who clicks", "You, every take", "The worker, on staging"],
-                    ["Voice", "You, live", "ElevenLabs neural HD"],
-                    ["Host", "Webcam", "Circular talking avatar"],
-                    ["A miss", "The whole take again", "Script re-record, planner idle"],
-                    ["After a release", "Stale", "Re-run the saved scenario"],
+                    ["On camera", "You", "Optional host"],
+                    ["Who clicks", "You, every time", "Drumreel"],
+                    ["Voice", "You, live", "Studio voice"],
+                    ["A miss", "Start over", "Another take of the same walkthrough"],
+                    ["After a release", "Out of date", "Film it again from the same prompt"],
                   ].map(([row, loom, us]) => (
                     <tr key={row} className="border-t border-line">
                       <td className="py-4 pr-6">{row}</td>

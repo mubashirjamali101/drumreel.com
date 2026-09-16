@@ -43,7 +43,7 @@ export default function OgImage() {
             Superintelligence for product demos.
           </div>
           <div style={{ fontSize: 28, color: "#8a8a86", maxWidth: 820 }}>
-            We film the live product. ElevenLabs + a talking avatar. Re-record a saved script without a new planner run.
+            Write a prompt. Get a walkthrough of your live product — host and voice included, if you want.
           </div>
         </div>
         <div style={{ fontSize: 22, color: "#c9925a" }}>drumreel.com · 50 credits after you verify email</div>
