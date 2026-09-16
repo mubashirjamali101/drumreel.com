@@ -11,7 +11,7 @@ function Window({
   children: ReactNode;
 }) {
   return (
-    <div className={`glow-ring overflow-hidden rounded-2xl ${light ? "bg-white text-slate-900" : "bg-[#0b0b14] text-cream"}`}>
+    <div className={`overflow-hidden rounded-lg border border-line ${light ? "bg-white text-slate-900" : "bg-ink-2 text-cream"}`}>
       <div className={`flex items-center gap-2 border-b px-4 py-2.5 ${light ? "border-slate-200 bg-slate-50" : "border-white/10"}`}>
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -25,7 +25,7 @@ function Window({
 
 export function StudioShot() {
   return (
-    <Window title="app.drumreel.com/app/runs/new" light>
+    <Window title="Studio HD · New walkthrough" light>
       <div className="bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-950 px-5 py-4 text-white">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>

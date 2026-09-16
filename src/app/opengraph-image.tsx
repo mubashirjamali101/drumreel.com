@@ -40,10 +40,10 @@ export default function OgImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ fontSize: 64, lineHeight: 1.05, maxWidth: 980 }}>
-            Ditch 95% of your Looms.
+            Superintelligence for product demos.
           </div>
-          <div style={{ fontSize: 28, color: "#c4b5fd", maxWidth: 820 }}>
-            We drive the live product, add ElevenLabs + a talking avatar, and re-film a saved script without a new planner run.
+          <div style={{ fontSize: 28, color: "#8a8a86", maxWidth: 820 }}>
+            We film the live product. ElevenLabs + a talking avatar. Re-record a saved script without a new planner run.
           </div>
         </div>
         <div style={{ fontSize: 22, color: "#c9925a" }}>drumreel.com · 50 credits after you verify email</div>

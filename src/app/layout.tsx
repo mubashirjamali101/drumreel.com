@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.domain,
     siteName: "Drumreel",
-    title: "Ditch 95% of your Looms. Drumreel films the product.",
+    title: "Superintelligence for product demos.",
     description: site.description,
   },
   twitter: {
@@ -64,9 +64,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     description: site.description,
     offers: {
       "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "50 credits after email verification",
+      availability: "https://schema.org/PreOrder",
+      description: "Waitlist · Studio coming soon",
     },
   };
 
@@ -75,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full antialiased`}
     >
-      <body className="grain min-h-full bg-ink text-cream">
+      <body className="min-h-full bg-ink text-cream">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
       </body>
