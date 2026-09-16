@@ -16,9 +16,9 @@
   --color-cream-dim: var(--cream-dim);
   --color-line: var(--line);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-serif: var(--font-instrument);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-grotesk);
+  --font-serif: var(--font-newsreader);
+  --font-mono: var(--font-plex);
 }
 
 html {
@@ -29,6 +29,7 @@ body {
   background: var(--ink);
   color: var(--cream);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01" on, "kern" on;
 }
 
 ::selection {
@@ -37,7 +38,11 @@ body {
 }
 
 .serif {
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  letter-spacing: -0.032em;
+  font-variation-settings: "opsz" 72;
 }
 
 .glass {

@@ -35,9 +35,10 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.07),transparent_55%)]" />
           <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 lg:pt-24">
             <p className="font-mono text-[11px] tracking-wide text-cream-dim">coming soon</p>
-            <h1 className="serif mt-4 max-w-3xl text-5xl leading-[1.05] tracking-tight md:text-7xl">
+            <h1 className="serif mt-4 max-w-3xl text-5xl leading-[1.08] md:text-7xl">
               Write the prompt.
-              <span className="italic text-cream-dim"> Get the video.</span>
+              <br />
+              <span className="italic text-cream-dim">Get the video.</span>
             </h1>
             <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-cream-dim">
               You describe the flow. Drumreel films your live product, adds a host and a studio voice if you
