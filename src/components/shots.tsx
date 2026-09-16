@@ -11,7 +11,7 @@ function Window({
   children: ReactNode;
 }) {
   return (
-    <div className={`overflow-hidden rounded-lg border border-line ${light ? "bg-white text-slate-900" : "bg-ink-2 text-cream"}`}>
+    <div className={`overflow-hidden rounded-2xl ${light ? "bg-white text-slate-900 shadow-2xl" : "glass text-cream"}`}>
       <div className={`flex items-center gap-2 border-b px-4 py-2.5 ${light ? "border-slate-200 bg-slate-50" : "border-white/10"}`}>
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />

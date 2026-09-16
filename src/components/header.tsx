@@ -3,7 +3,7 @@ import { Mark } from "./mark";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-ink/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/50 backdrop-blur-xl">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
           <Mark className="h-6 w-6" />

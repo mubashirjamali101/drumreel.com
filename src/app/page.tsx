@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Cta, CtaGhost } from "@/components/cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { LiveRun } from "@/components/live-run";
+import { PromptStage } from "@/components/prompt-stage";
 import { PlayerShot, RunShot, StudioShot } from "@/components/shots";
 import { WaitlistForm } from "@/components/waitlist-form";
 import { hosts, site, voices } from "@/lib/site";
@@ -31,24 +31,26 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="mx-auto grid max-w-6xl items-end gap-16 px-6 pb-24 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:pt-28">
-          <div>
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.07),transparent_55%)]" />
+          <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 lg:pt-24">
             <p className="font-mono text-[11px] tracking-wide text-cream-dim">coming soon</p>
-            <h1 className="serif mt-5 text-5xl leading-[1.05] tracking-tight md:text-7xl">
-              Superintelligence
-              <br />
-              for product demos.
+            <h1 className="serif mt-4 max-w-3xl text-5xl leading-[1.05] tracking-tight md:text-7xl">
+              Write the prompt.
+              <span className="italic text-cream-dim"> Get the video.</span>
             </h1>
-            <p className="mt-6 max-w-md text-[17px] leading-relaxed text-cream-dim">
-              Describe the walkthrough. We log into staging, rehearse, film the live app, and master
-              ElevenLabs + a talking avatar onto the MP4. Re-film the script without wasting a planner run.
+            <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-cream-dim">
+              You describe the flow. Drumreel logs in, clicks the product, records Chromium, then masters
+              ElevenLabs and a talking avatar onto the MP4.
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Cta>Join waitlist</Cta>
               <CtaGhost href="#product">See the product</CtaGhost>
             </div>
+            <div className="mt-14">
+              <PromptStage />
+            </div>
           </div>
-          <LiveRun />
         </section>
 
         <section className="border-y border-line">
