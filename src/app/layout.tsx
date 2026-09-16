@@ -16,8 +16,8 @@ const display = Inter_Tight({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: "Drumreel — Product demos, recorded for you",
-    template: "%s · Drumreel",
+    default: "Drumreel",
+    template: "%s | Drumreel",
   },
   description: site.description,
   applicationName: "Drumreel",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "product demo video",
     "automated walkthrough",
     "SaaS demo recording",
-    "Playwright demo",
+    "app tutorial",
     "screen recording",
   ],
   openGraph: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.domain,
     siteName: "Drumreel",
-    title: "Superintelligence for product demos.",
+    title: "Drumreel",
     description: site.description,
   },
   twitter: {
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/PreOrder",
-      description: "Waitlist · Studio coming soon",
+      description: "Request access. Drumreel is not for sale yet.",
     },
   };
 

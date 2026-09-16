@@ -5,40 +5,44 @@ import { useEffect, useState } from "react";
 const DEMOS = [
   {
     id: "signup",
+    label: "Sign up",
     prompt: "Record a video of the sign up flow",
     poster: "/demos/signup.jpg",
     video: "/demos/signup.mp4",
-    file: "Signup flow",
+    file: "Sign up",
     avatar: "/avatars/sarah.jpg",
-    voice: "Rachel · ElevenLabs",
+    voice: "Rachel",
   },
   {
     id: "filters",
-    prompt: "Record a demo video of filters bug fix",
+    label: "Filters",
+    prompt: "Record a demo video of the filters bug fix",
     poster: "/demos/filters.jpg",
     video: "/demos/filters.mp4",
-    file: "Filters walkthrough",
+    file: "Filters",
     avatar: "/avatars/alex.jpg",
-    voice: "Adam · ElevenLabs",
+    voice: "Adam",
   },
   {
     id: "gallery",
+    label: "Gallery",
     prompt: "Showcase the gallery feature",
     poster: "/demos/gallery.jpg",
     video: "/demos/gallery.mp4",
-    file: "Gallery tour",
+    file: "Gallery",
     avatar: "/avatars/elena.jpg",
-    voice: "Bella · ElevenLabs",
+    voice: "Bella",
   },
   {
     id: "admin",
+    label: "Admin",
     prompt:
       "Login as admin on the admin panel and demo the user management flow, admin creds: admin@example.com Star#Tw0w4ke",
     poster: "/demos/admin.jpg",
     video: "/demos/admin.mp4",
-    file: "Admin walkthrough",
+    file: "Admin",
     avatar: "/avatars/marcus.jpg",
-    voice: "Antoni · ElevenLabs",
+    voice: "Antoni",
   },
 ] as const;
 
@@ -73,24 +77,22 @@ function Stage({
     return () => window.clearTimeout(hold);
   }, [phase, onDone]);
 
+  const status = phase === "type" ? "Writing" : phase === "record" ? "Recording" : "Done";
+
   return (
     <div className="grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)]">
       <div className="flex flex-col border-b border-white/10 p-5 lg:border-b-0 lg:border-r">
-        <div className="flex items-center justify-between text-[11px] text-cream-dim">
-          <span className="tracking-[0.14em]">prompt</span>
-          <span>you type this · we record it</span>
+        <div className="flex items-center justify-between text-[13px] text-cream-dim">
+          <span>Prompt</span>
+          <span>You write this. We record the screen.</span>
         </div>
         <p className="mt-5 min-h-[7.5rem] text-[15px] leading-relaxed text-cream">
           {typed}
           <span className="ml-0.5 inline-block h-4 w-px animate-pulse bg-cream align-middle" />
         </p>
-        <div className="mt-auto flex items-center justify-between pt-6 text-[12px]">
-          <span className="text-cream-dim">
-            {phase === "type" && "writing…"}
-            {phase === "record" && "filming…"}
-            {phase === "play" && "ready"}
-          </span>
-          <span className="rounded-md bg-cream px-3 py-1.5 text-[12px] font-medium text-ink">Record</span>
+        <div className="mt-auto flex items-center justify-between pt-6 text-[13px]">
+          <span className="text-cream-dim">{status}</span>
+          <span className="rounded-md bg-cream px-3 py-1.5 text-[13px] font-medium text-ink">Record</span>
         </div>
       </div>
 
@@ -110,13 +112,12 @@ function Stage({
           // eslint-disable-next-line @next/next/no-img-element
           <img src={demo.poster} alt="" className="h-full w-full object-cover opacity-50" />
         )}
-        <div className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-black/50 px-2.5 py-1 text-[11px] text-white backdrop-blur-md">
-          <span className={`h-1.5 w-1.5 rounded-full ${phase === "play" ? "bg-emerald-400" : "animate-pulse bg-red-500"}`} />
-          {phase === "play" ? "DONE" : "REC"}
+        <div className="absolute left-3 top-3 rounded-md bg-black/50 px-2.5 py-1 text-[12px] text-white backdrop-blur-md">
+          {phase === "play" ? "Done" : "Recording"}
         </div>
-        <div className="absolute bottom-3 left-3 right-20 rounded-lg bg-black/45 px-3 py-2 text-[11px] text-white backdrop-blur-md">
+        <div className="absolute bottom-3 left-3 right-20 rounded-md bg-black/45 px-3 py-2 text-[12px] text-white backdrop-blur-md">
           <p className="font-medium">{demo.file}</p>
-          <p className="text-white/70">{demo.voice}</p>
+          <p className="text-white/70">Voice: {demo.voice}</p>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -142,11 +143,11 @@ export function PromptStage() {
             key={item.id}
             type="button"
             onClick={() => setIndex(i)}
-            className={`shrink-0 rounded-md px-2.5 py-1 text-[11px] tracking-wide ${
+            className={`shrink-0 rounded-md px-2.5 py-1 text-[13px] ${
               i === index ? "bg-white/15 text-cream" : "text-cream-dim hover:text-cream"
             }`}
           >
-            {item.id}
+            {item.label}
           </button>
         ))}
       </div>

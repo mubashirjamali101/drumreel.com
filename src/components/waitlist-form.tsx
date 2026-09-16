@@ -34,7 +34,7 @@ export function WaitlistForm() {
   if (state === "ok") {
     return (
       <p className="rounded-md border border-line px-4 py-3 text-sm text-cream">
-        You’re on the list. We’ll write when Studio opens.
+        Thanks. We will email you when Drumreel is ready.
       </p>
     );
   }
@@ -59,7 +59,7 @@ export function WaitlistForm() {
         disabled={state === "sending"}
         className="h-11 rounded-md bg-cream px-5 text-sm font-medium text-ink hover:bg-white disabled:opacity-60"
       >
-        {state === "sending" ? "Joining…" : "Join waitlist"}
+        {state === "sending" ? "Sending" : "Request access"}
       </button>
       {message ? <p className="w-full text-sm text-red-400 sm:col-span-2">{message}</p> : null}
     </form>

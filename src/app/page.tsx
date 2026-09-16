@@ -9,28 +9,28 @@ import { hosts, site, voices } from "@/lib/site";
 
 const faqs = [
   {
-    q: "Do you generate the video?",
-    a: "No. We record your real app on screen. What you see is what happened — not a made-up clip.",
+    q: "Is the video generated?",
+    a: "No. Drumreel records your live product. The pictures on screen are yours, not invented.",
   },
   {
-    q: "How is this not Loom?",
-    a: "You don’t click through or sit on camera. You write what to show. You get a finished screen recording.",
+    q: "How is this different from recording it myself?",
+    a: "You write what to show and leave. You do not have to click through the app or sit on camera.",
   },
   {
     q: "Can I record more than one at a time?",
-    a: "Yes. Queue several demos, lessons, or walkthroughs and they record in parallel.",
+    a: "Yes. You can run several recordings together: demos, lessons, walkthroughs, or tutorials.",
   },
   {
-    q: "What can I record?",
-    a: "Product demos, app tutorials, lessons, onboarding, and walkthroughs. If it’s on a public page, we can record it.",
+    q: "What is it for?",
+    a: "Product demos, onboarding, feature walkthroughs, bug walkthroughs, and app tutorials. Anything on a public page.",
   },
   {
-    q: "Can it talk and show a host?",
-    a: "If you want. Pick a voice and a presenter, or leave both off.",
+    q: "Can there be a person and a voice on the video?",
+    a: "Yes. You can add a presenter in the corner and a spoken voice, or neither.",
   },
   {
-    q: "When can I use it?",
-    a: "Soon. Join the waitlist.",
+    q: "When will it be available?",
+    a: "Not yet. Leave your email and we will write when it is ready.",
   },
 ];
 
@@ -44,31 +44,32 @@ export default function Home() {
           <div className="relative mx-auto max-w-6xl px-6 pb-16 pt-10 lg:pt-14">
             <PromptStage />
             <div className="mt-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-[11px] tracking-[0.14em] text-cream-dim">coming soon</p>
-                <h1 className="display mt-2 max-w-xl text-3xl leading-tight md:text-5xl">
-                  Write a prompt.
-                  <span className="font-normal text-cream-dim"> Get a screen recording.</span>
-                </h1>
-              </div>
-              <Cta>Join waitlist</Cta>
+              <h1 className="display max-w-xl text-3xl leading-tight md:text-4xl">
+                You describe the walkthrough. Drumreel records the screen.
+              </h1>
+              <Cta>Request access</Cta>
             </div>
           </div>
         </section>
 
         <section className="border-y border-line">
-          <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              ["Demos", "Show the product without sitting on camera."],
-              ["Tutorials", "App lessons and how-tos, recorded for you."],
-              ["Walkthroughs", "Onboarding, features, bug fixes."],
-              ["In parallel", "Several recordings at once. Not one after another."],
-            ].map(([t, b]) => (
-              <div key={t}>
-                <h2 className="text-sm font-medium">{t}</h2>
-                <p className="mt-2 text-sm text-cream-dim">{b}</p>
-              </div>
-            ))}
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <h2 className="text-sm font-medium">Demos</h2>
+              <p className="mt-2 text-sm text-cream-dim">Show a feature without recording it yourself.</p>
+            </div>
+            <div>
+              <h2 className="text-sm font-medium">Lessons and tutorials</h2>
+              <p className="mt-2 text-sm text-cream-dim">How-to videos of the live app.</p>
+            </div>
+            <div>
+              <h2 className="text-sm font-medium">Walkthroughs</h2>
+              <p className="mt-2 text-sm text-cream-dim">Onboarding, releases, and bug reports.</p>
+            </div>
+            <div>
+              <h2 className="text-sm font-medium">More than one at once</h2>
+              <p className="mt-2 text-sm text-cream-dim">Start several recordings and let them run together.</p>
+            </div>
           </div>
         </section>
 
@@ -78,33 +79,35 @@ export default function Home() {
               src="/demos/signup.mp4"
               poster="/demos/signup.jpg"
               avatar="/avatars/sarah.jpg"
-              caption="Signup flow"
+              caption="Sign up"
             />
             <div>
-              <h2 className="display text-3xl md:text-4xl">We record it. We don’t invent it.</h2>
+              <h2 className="display text-3xl md:text-4xl">A recording of your product, not a generated clip</h2>
               <p className="mt-4 max-w-md text-cream-dim">
-                Your real screens. Your real clicks. A video of what actually happened — not a generated fake.
+                Drumreel opens your public page and records what happens there. The video is a screen
+                recording, not something drawn by a model.
               </p>
             </div>
           </div>
 
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="display text-3xl md:text-4xl">A host and a voice, if you want.</h2>
+              <h2 className="display text-3xl md:text-4xl">A presenter and a voice are optional</h2>
               <p className="mt-4 max-w-md text-cream-dim">
-                Your product fills the frame. A presenter can sit in the corner. A voice can talk over it.
+                The product stays in the frame. You can place a person in the corner and add a spoken
+                voice, or keep the recording silent.
               </p>
             </div>
             <FilmCard
               src="/demos/gallery.mp4"
               poster="/demos/gallery.jpg"
               avatar="/avatars/elena.jpg"
-              caption="Gallery tour"
+              caption="Gallery"
             />
           </div>
 
           <div>
-            <p className="text-[11px] tracking-[0.14em] text-cream-dim">hosts · voices</p>
+            <p className="text-sm text-cream-dim">Presenters and voices</p>
             <div className="mt-8 grid gap-10 md:grid-cols-2">
               <ul className="grid grid-cols-2 gap-4">
                 {hosts.map((h) => (
@@ -124,7 +127,7 @@ export default function Home() {
                       <Image src={v.file} alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
                       {v.name}
                     </span>
-                    <span className="text-xs text-cream-dim">{v.tone.split(" · ")[0]}</span>
+                    <span className="text-xs text-cream-dim">{v.tone}</span>
                   </li>
                 ))}
               </ul>
@@ -136,12 +139,13 @@ export default function Home() {
               src="/demos/filters.mp4"
               poster="/demos/filters.jpg"
               avatar="/avatars/alex.jpg"
-              caption="Filters walkthrough"
+              caption="Filters"
             />
             <div>
-              <h2 className="display text-3xl md:text-4xl">Need another take? Ask.</h2>
+              <h2 className="display text-3xl md:text-4xl">Record the same walkthrough again</h2>
               <p className="mt-4 max-w-md text-cream-dim">
-                Same walkthrough, new video. You don’t sit through it again.
+                If a screen changed, you do not have to click through it yourself a second time. Ask for
+                another recording of the same walkthrough.
               </p>
             </div>
           </div>
@@ -149,25 +153,25 @@ export default function Home() {
 
         <section id="loom" className="border-y border-line">
           <div className="mx-auto max-w-6xl px-6 py-24">
-            <h2 className="display max-w-2xl text-3xl md:text-5xl">
-              Keep Loom for the times you need your face.
+            <h2 className="display max-w-2xl text-3xl md:text-4xl">
+              If you need to be on camera, record it yourself. For the rest, use Drumreel.
             </h2>
             <div className="mt-12 overflow-x-auto">
               <table className="w-full min-w-[32rem] text-left text-sm">
                 <thead>
                   <tr className="text-cream-dim">
                     <th className="pb-4 font-normal"> </th>
-                    <th className="pb-4 font-normal">Loom</th>
+                    <th className="pb-4 font-normal">You record it</th>
                     <th className="pb-4 font-normal text-cream">Drumreel</th>
                   </tr>
                 </thead>
                 <tbody className="text-cream-dim">
                   {[
-                    ["On camera", "You", "Optional host"],
-                    ["Who clicks", "You, every time", "Drumreel"],
-                    ["Voice", "You, live", "Optional voice"],
-                    ["A miss", "Start over", "Another take"],
-                    ["Several at once", "One at a time", "Record in parallel"],
+                    ["On camera", "You", "A presenter, if you add one"],
+                    ["Who uses the product", "You", "Drumreel"],
+                    ["Voice", "You, live", "A voice, if you add one"],
+                    ["A mistake", "Start again", "Record it again"],
+                    ["Several videos", "One after another", "At the same time"],
                   ].map(([row, loom, us]) => (
                     <tr key={row} className="border-t border-line">
                       <td className="py-4 pr-6">{row}</td>
@@ -182,13 +186,15 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="display text-3xl">Pricing is coming soon.</h2>
-          <p className="mt-3 max-w-lg text-cream-dim">Join the waitlist. We’ll write when seats open.</p>
+          <h2 className="display text-3xl">Pricing will follow</h2>
+          <p className="mt-3 max-w-lg text-cream-dim">
+            Nothing is for sale yet. Leave your email if you want to hear when it is.
+          </p>
         </section>
 
         <section id="faq" className="border-t border-line">
           <div className="mx-auto max-w-3xl px-6 py-24">
-            <h2 className="display text-3xl">FAQ</h2>
+            <h2 className="display text-3xl">Questions</h2>
             <dl className="mt-10 space-y-8">
               {faqs.map((item) => (
                 <div key={item.q}>
@@ -202,7 +208,8 @@ export default function Home() {
 
         <section id="waitlist" className="border-t border-line">
           <div className="mx-auto max-w-6xl px-6 py-24">
-            <h2 className="display text-3xl md:text-4xl">Join the waitlist.</h2>
+            <h2 className="display text-3xl md:text-4xl">Request access</h2>
+            <p className="mt-3 max-w-md text-cream-dim">We will email you when Drumreel is ready to use.</p>
             <div className="mt-8">
               <WaitlistForm />
             </div>

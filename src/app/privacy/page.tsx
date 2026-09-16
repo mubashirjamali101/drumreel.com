@@ -11,25 +11,18 @@ export default function PrivacyPage() {
       <Header />
       <main className="mx-auto max-w-2xl px-6 py-20">
         <p className="text-sm text-cream-dim">Last updated September 2026</p>
-        <h1 className="display mt-3 text-4xl">Privacy Policy</h1>
+        <h1 className="display mt-3 text-4xl">Privacy</h1>
         <div className="mt-10 space-y-6 text-sm leading-relaxed text-cream-dim">
           <p>
-            We collect account email and name, password hash, Stripe billing identifiers, walkthrough
-            prompts, target URLs, generated scripts, screenshots, and video files. We send verification
-            and password-reset mail to the address you give us.
+            If you request access, we store the email you give us so we can write back. We do not sell
+            that list.
           </p>
           <p>
-            Screenshots, page text, and prompts go to the AI provider for the run (OpenAI or Anthropic).
-            Optional narration goes to ElevenLabs. Card data stays with Stripe. Object storage holds
-            videos. Email is sent through Resend or SMTP.
+            This marketing site does not require an account. When the product is live, we will describe
+            what it stores (prompts, recordings, and billing) on this page.
           </p>
           <p>
-            You can delete a finished run in the studio. To delete an account, email {site.email} or{" "}
-            {site.support}.
-          </p>
-          <p>
-            We set an HttpOnly session cookie on the app host that lasts 14 days. This marketing site
-            does not require an account cookie.
+            To be removed from the list, email {site.email}.
           </p>
         </div>
       </main>

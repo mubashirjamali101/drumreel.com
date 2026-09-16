@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export function Cta({
-  children = "Join waitlist",
+  children = "Request access",
   className = "",
 }: {
   children?: ReactNode;

@@ -14,17 +14,17 @@ export function Header() {
             Product
           </a>
           <a href="#loom" className="hover:text-cream">
-            vs Loom
+            Compare
           </a>
           <a href="#faq" className="hover:text-cream">
-            FAQ
+            Questions
           </a>
         </nav>
         <a
           href="#waitlist"
           className="rounded-md bg-cream px-3 py-1.5 text-[13px] font-medium text-ink hover:bg-white"
         >
-          Join waitlist
+          Request access
         </a>
       </div>
     </header>
