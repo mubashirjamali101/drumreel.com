@@ -34,11 +34,11 @@ export default function Home() {
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.07),transparent_55%)]" />
           <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 lg:pt-24">
-            <p className="font-mono text-[11px] tracking-wide text-cream-dim">coming soon</p>
-            <h1 className="serif mt-4 max-w-3xl text-5xl leading-[1.08] md:text-7xl">
+            <p className="text-[11px] tracking-[0.14em] text-cream-dim">coming soon</p>
+            <h1 className="display mt-4 max-w-3xl text-5xl leading-[1.08] md:text-7xl">
               Write the prompt.
               <br />
-              <span className="italic text-cream-dim">Get the video.</span>
+              <span className="font-normal text-cream-dim">Get the video.</span>
             </h1>
             <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-cream-dim">
               You describe the flow. Drumreel films your live product, adds a host and a studio voice if you
@@ -67,8 +67,8 @@ export default function Home() {
         <section id="product" className="mx-auto max-w-6xl space-y-28 px-6 py-28">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <p className="font-mono text-[11px] text-cream-dim">01</p>
-              <h2 className="serif mt-3 text-4xl md:text-5xl">You write it. We send the video.</h2>
+              <p className="text-[11px] tracking-[0.14em] text-cream-dim">01</p>
+              <h2 className="display mt-3 text-4xl md:text-5xl">You write it. We send the video.</h2>
               <p className="mt-4 text-cream-dim">
                 A public link and a sentence are enough. Go do something else. The walkthrough shows up as an
                 MP4.
@@ -90,8 +90,8 @@ export default function Home() {
               caption="gallery-tour.mp4"
             />
             <div>
-              <p className="font-mono text-[11px] text-cream-dim">02</p>
-              <h2 className="serif mt-3 text-4xl md:text-5xl">A host and a voice. Not your webcam.</h2>
+              <p className="text-[11px] tracking-[0.14em] text-cream-dim">02</p>
+              <h2 className="display mt-3 text-4xl md:text-5xl">A host and a voice. Not your webcam.</h2>
               <p className="mt-4 text-cream-dim">
                 Your product fills the frame. A presenter sits in the corner. A studio voice talks over it.
                 Optional, both of them.
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="font-mono text-[11px] text-cream-dim">hosts · voices</p>
+            <p className="text-[11px] tracking-[0.14em] text-cream-dim">hosts · voices</p>
             <div className="mt-8 grid gap-10 md:grid-cols-2">
               <ul className="grid grid-cols-2 gap-4">
                 {hosts.map((h) => (
@@ -129,8 +129,8 @@ export default function Home() {
 
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <p className="font-mono text-[11px] text-cream-dim">03</p>
-              <h2 className="serif mt-3 text-4xl md:text-5xl">A new take. Not a new afternoon.</h2>
+              <p className="text-[11px] tracking-[0.14em] text-cream-dim">03</p>
+              <h2 className="display mt-3 text-4xl md:text-5xl">A new take. Not a new afternoon.</h2>
               <p className="mt-4 text-cream-dim">
                 Product moved? Ask for another take of the same walkthrough. You don’t sit through it again.
               </p>
@@ -146,8 +146,8 @@ export default function Home() {
 
         <section id="loom" className="border-y border-line">
           <div className="mx-auto max-w-6xl px-6 py-28">
-            <p className="font-mono text-[11px] text-cream-dim">vs loom</p>
-            <h2 className="serif mt-3 max-w-2xl text-4xl md:text-5xl">
+            <p className="text-[11px] tracking-[0.14em] text-cream-dim">vs loom</p>
+            <h2 className="display mt-3 max-w-2xl text-4xl md:text-5xl">
               Ditch 95% of the Looms. Keep the ones that need you.
             </h2>
             <div className="mt-14 overflow-x-auto">
@@ -180,8 +180,8 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-28">
-          <p className="font-mono text-[11px] text-cream-dim">access</p>
-          <h2 className="serif mt-3 text-4xl">Pricing is coming soon.</h2>
+          <p className="text-[11px] tracking-[0.14em] text-cream-dim">access</p>
+          <h2 className="display mt-3 text-4xl">Pricing is coming soon.</h2>
           <p className="mt-4 max-w-lg text-cream-dim">
             No public plans yet. Join the waitlist. We’ll send a seat when Studio opens — not a drip campaign.
           </p>
@@ -189,7 +189,7 @@ export default function Home() {
 
         <section id="faq" className="border-t border-line">
           <div className="mx-auto max-w-3xl px-6 py-28">
-            <h2 className="serif text-4xl">FAQ</h2>
+            <h2 className="display text-4xl">FAQ</h2>
             <dl className="mt-12 space-y-10">
               {faqs.map((item) => (
                 <div key={item.q}>
@@ -203,7 +203,7 @@ export default function Home() {
 
         <section id="waitlist" className="border-t border-line">
           <div className="mx-auto max-w-6xl px-6 py-28">
-            <h2 className="serif text-4xl md:text-5xl">Ready when you are.</h2>
+            <h2 className="display text-4xl md:text-5xl">Ready when you are.</h2>
             <p className="mt-4 max-w-md text-cream-dim">
               Drop a work email. We open Studio in waves.
             </p>

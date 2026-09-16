@@ -1,24 +1,16 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Newsreader, Schibsted_Grotesk } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const sans = Schibsted_Grotesk({
-  variable: "--font-grotesk",
+const sans = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const serif = Newsreader({
-  variable: "--font-newsreader",
+const display = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
-  axes: ["opsz"],
-  style: ["normal", "italic"],
-});
-
-const mono = IBM_Plex_Mono({
-  variable: "--font-plex",
-  subsets: ["latin"],
-  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -73,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${serif.variable} ${mono.variable} h-full antialiased`}
+      className={`${sans.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ink text-cream">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

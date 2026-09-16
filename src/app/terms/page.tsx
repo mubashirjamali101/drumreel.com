@@ -11,7 +11,7 @@ export default function TermsPage() {
       <Header />
       <main className="mx-auto max-w-2xl px-6 py-20">
         <p className="text-sm text-cream-dim">Last updated September 2026</p>
-        <h1 className="serif mt-3 text-4xl">Terms of Service</h1>
+        <h1 className="display mt-3 text-4xl">Terms of Service</h1>
         <div className="mt-10 space-y-6 text-sm leading-relaxed text-cream-dim">
           <p>
             By creating an account or using Drumreel you agree to these terms. You must verify the email

@@ -17,7 +17,7 @@ export default function OgImage() {
           background: "#0c0c0d",
           color: "#f3eee6",
           padding: "72px",
-          fontFamily: "Georgia, serif",
+          fontFamily: "ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 28, letterSpacing: 2 }}>

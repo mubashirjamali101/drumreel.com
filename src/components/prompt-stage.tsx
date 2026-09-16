@@ -77,10 +77,10 @@ function Stage({
     <div className="grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)]">
       <div className="flex flex-col border-b border-white/10 p-5 lg:border-b-0 lg:border-r">
         <div className="flex items-center justify-between text-[11px] text-cream-dim">
-          <span className="font-mono">prompt</span>
+          <span className="tracking-[0.14em]">prompt</span>
           <span>you type this · we film it</span>
         </div>
-        <p className="mt-5 min-h-[7.5rem] font-mono text-[15px] leading-relaxed text-cream">
+        <p className="mt-5 min-h-[7.5rem] text-[15px] leading-relaxed text-cream">
           {typed}
           <span className="ml-0.5 inline-block h-4 w-px animate-pulse bg-cream align-middle" />
         </p>
@@ -142,7 +142,7 @@ export function PromptStage() {
             key={item.id}
             type="button"
             onClick={() => setIndex(i)}
-            className={`shrink-0 rounded-md px-2.5 py-1 font-mono text-[11px] ${
+            className={`shrink-0 rounded-md px-2.5 py-1 text-[11px] tracking-wide ${
               i === index ? "bg-white/15 text-cream" : "text-cream-dim hover:text-cream"
             }`}
           >
