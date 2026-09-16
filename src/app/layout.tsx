@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "automated walkthrough",
     "SaaS demo recording",
     "Playwright demo",
-    "sales demo MP4",
+    "screen recording",
   ],
   openGraph: {
     type: "website",

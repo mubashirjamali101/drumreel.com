@@ -20,7 +20,7 @@ export default function TermsPage() {
           <h2 className="text-cream">What Drumreel does</h2>
           <p>
             You give us a public HTTPS URL and a brief. We drive that site with a headless browser, send
-            screenshots and the brief to a third-party AI provider, record an MP4, and store it. Optional
+            screenshots and the brief to a third-party AI provider, record a video, and store it. Optional
             voiceover uses ElevenLabs. You must have permission to record the target application.
           </p>
           <h2 className="text-cream">Credits and payments</h2>

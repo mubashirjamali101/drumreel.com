@@ -8,7 +8,7 @@ const DEMOS = [
     prompt: "Record a video of the sign up flow",
     poster: "/demos/signup.jpg",
     video: "/demos/signup.mp4",
-    file: "signup-flow.mp4",
+    file: "Signup flow",
     avatar: "/avatars/sarah.jpg",
     voice: "Rachel · ElevenLabs",
   },
@@ -17,7 +17,7 @@ const DEMOS = [
     prompt: "Record a demo video of filters bug fix",
     poster: "/demos/filters.jpg",
     video: "/demos/filters.mp4",
-    file: "filters-bugfix.mp4",
+    file: "Filters walkthrough",
     avatar: "/avatars/alex.jpg",
     voice: "Adam · ElevenLabs",
   },
@@ -26,7 +26,7 @@ const DEMOS = [
     prompt: "Showcase the gallery feature",
     poster: "/demos/gallery.jpg",
     video: "/demos/gallery.mp4",
-    file: "gallery-tour.mp4",
+    file: "Gallery tour",
     avatar: "/avatars/elena.jpg",
     voice: "Bella · ElevenLabs",
   },
@@ -36,7 +36,7 @@ const DEMOS = [
       "Login as admin on the admin panel and demo the user management flow, admin creds: admin@example.com Star#Tw0w4ke",
     poster: "/demos/admin.jpg",
     video: "/demos/admin.mp4",
-    file: "admin-users.mp4",
+    file: "Admin walkthrough",
     avatar: "/avatars/marcus.jpg",
     voice: "Antoni · ElevenLabs",
   },
@@ -78,7 +78,7 @@ function Stage({
       <div className="flex flex-col border-b border-white/10 p-5 lg:border-b-0 lg:border-r">
         <div className="flex items-center justify-between text-[11px] text-cream-dim">
           <span className="tracking-[0.14em]">prompt</span>
-          <span>you type this · we film it</span>
+          <span>you type this · we record it</span>
         </div>
         <p className="mt-5 min-h-[7.5rem] text-[15px] leading-relaxed text-cream">
           {typed}

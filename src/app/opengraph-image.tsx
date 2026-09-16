@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Drumreel — Describe the walkthrough. Get the MP4.";
+export const alt = "Drumreel — Write a prompt. Get a screen recording.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -43,7 +43,7 @@ export default function OgImage() {
             Superintelligence for product demos.
           </div>
           <div style={{ fontSize: 28, color: "#8a8a86", maxWidth: 820 }}>
-            Write a prompt. Get a walkthrough of your live product — host and voice included, if you want.
+            Write a prompt. Get a screen recording of your real app.
           </div>
         </div>
         <div style={{ fontSize: 22, color: "#c9925a" }}>drumreel.com · 50 credits after you verify email</div>

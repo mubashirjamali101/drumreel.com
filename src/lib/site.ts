@@ -5,7 +5,7 @@ export const site = {
   support: "drumreel@mubashirjamali.com",
   tagline: "The AI camera crew for your product.",
   description:
-    "Write a prompt. Drumreel films your live product and sends an MP4 — with an optional host and studio voice. Join the waitlist.",
+    "Write a prompt. Drumreel records your real app on screen — demos, lessons, walkthroughs, tutorials. Join the waitlist.",
 };
 
 export const hosts = [
