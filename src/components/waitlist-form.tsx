@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ export function WaitlistForm() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, referrer: document.referrer || undefined }),
       });
       const data = (await res.json()) as { error?: string };
       if (!res.ok) {
@@ -23,6 +24,7 @@ export function WaitlistForm() {
         setMessage(data.error ?? "Could not join. Try again.");
         return;
       }
+      track("waitlist_signup");
       setState("ok");
       setEmail("");
     } catch {
