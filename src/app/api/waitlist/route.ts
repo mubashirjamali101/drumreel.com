@@ -2,10 +2,18 @@ import { NextResponse } from "next/server";
 import { saveSignup, type WaitlistEntry } from "@/lib/waitlist-store";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_EMAIL = 120;
+const MAX_BODY = 4096; // bytes; a real signup body is well under 1 KB
+const MAX_TRACKED_IPS = 10_000;
 const hits = new Map<string, { n: number; reset: number }>();
 
 function limited(ip: string) {
   const now = Date.now();
+  if (hits.size > MAX_TRACKED_IPS) {
+    // Keep the in-memory limiter bounded on long-lived instances.
+    for (const [key, value] of hits) if (now > value.reset) hits.delete(key);
+    if (hits.size > MAX_TRACKED_IPS) hits.clear();
+  }
   const row = hits.get(ip);
   if (!row || now > row.reset) {
     hits.set(ip, { n: 1, reset: now + 60_000 });
@@ -57,16 +65,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Too many tries. Wait a minute." }, { status: 429 });
   }
 
+  // JSON only. Also blocks simple cross-site form posts (text/plain).
+  if (!req.headers.get("content-type")?.toLowerCase().includes("application/json")) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 415 });
+  }
+  if (Number(req.headers.get("content-length") ?? 0) > MAX_BODY) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 413 });
+  }
+
   let email = "";
   let referrer: string | undefined;
   try {
-    const body = (await req.json()) as { email?: unknown; referrer?: unknown };
+    const raw = await req.text();
+    if (raw.length > MAX_BODY) {
+      return NextResponse.json({ error: "Invalid request." }, { status: 413 });
+    }
+    const body = JSON.parse(raw) as { email?: unknown; referrer?: unknown } | null;
+    if (!body || typeof body !== "object") throw new Error("not an object");
     email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
     referrer = clip(body.referrer, 500);
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
-  if (!EMAIL.test(email) || email.length > 120) {
+  // Length check first so the regex never runs on huge input.
+  if (email.length > MAX_EMAIL || !EMAIL.test(email)) {
     return NextResponse.json({ error: "Enter a valid work email." }, { status: 400 });
   }
 

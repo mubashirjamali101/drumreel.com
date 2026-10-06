@@ -37,7 +37,7 @@ const DEMOS = [
     id: "admin",
     label: "Admin",
     prompt:
-      "Login as admin on the admin panel and demo the user management flow, admin creds: admin@example.com Star#Tw0w4ke",
+      "Login as admin on the admin panel and demo the user management flow, admin creds: admin@example.com ••••••••",
     poster: "/demos/admin.jpg",
     video: "/demos/admin.mp4",
     file: "Admin",
