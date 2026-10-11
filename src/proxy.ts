@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+// Next.js 16 renamed middleware.ts to proxy.ts. Do not move this back.
+// A document with neither cookie is sent to the app, which sets the hint
+// and returns the visitor here. drcheck stops that from looping.
 const APP = "https://app.drumreel.com";
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   if (!req.headers.get("accept")?.includes("text/html")) return NextResponse.next();
   const hasHint = req.cookies.has("drumreel_signed_in") || req.cookies.has("drumreel_auth_checked");
   const checking = req.nextUrl.searchParams.get("drcheck") === "1";
