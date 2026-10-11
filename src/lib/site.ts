@@ -2,6 +2,7 @@ export const site = {
   name: "Drumreel",
   // Primary host: Vercel 308-redirects the apex to www, so canonical/sitemap URLs use www.
   domain: "https://www.drumreel.com",
+  app: "https://app.drumreel.com",
   email: "hello@drumreel.com",
   support: "drumreel@mubashirjamali.com",
   tagline: "Screen recordings of your live product.",

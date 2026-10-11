@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/PreOrder",
-      description: "Request access. Drumreel is not for sale yet.",
+      description: "Create an account at app.drumreel.com.",
     },
   };
 

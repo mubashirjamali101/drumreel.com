@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Cta } from "@/components/cta";
+import { AuthActions } from "@/components/auth-actions";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { FilmCard } from "@/components/film-card";
 import { PromptStage } from "@/components/prompt-stage";
-import { WaitlistForm } from "@/components/waitlist-form";
 import { hosts, site, voices } from "@/lib/site";
 
 const faqs = [
@@ -29,8 +28,8 @@ const faqs = [
     a: "Yes. You can add a presenter in the corner and a spoken voice, or neither.",
   },
   {
-    q: "When will it be available?",
-    a: "Not yet. Leave your email and we will write when it is ready.",
+    q: "How do I start?",
+    a: "Create an account or sign in. The app opens on app.drumreel.com.",
   },
 ];
 
@@ -47,7 +46,7 @@ export default function Home() {
               <h1 className="display max-w-xl text-3xl leading-tight md:text-4xl">
                 You describe the walkthrough. Drumreel records the screen.
               </h1>
-              <Cta>Request access</Cta>
+              <AuthActions variant="primary" />
             </div>
           </div>
         </section>
@@ -185,10 +184,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="display text-3xl">Pricing will follow</h2>
+        <section id="pricing" className="mx-auto max-w-6xl px-6 py-20">
+          <h2 className="display text-3xl">Pricing</h2>
           <p className="mt-3 max-w-lg text-cream-dim">
-            Nothing is for sale yet. Leave your email if you want to hear when it is.
+            New accounts start without credits. Drumreel adds credits for invited testing.
           </p>
         </section>
 
@@ -208,10 +207,10 @@ export default function Home() {
 
         <section id="waitlist" className="border-t border-line">
           <div className="mx-auto max-w-6xl px-6 py-24">
-            <h2 className="display text-3xl md:text-4xl">Request access</h2>
-            <p className="mt-3 max-w-md text-cream-dim">We will email you when Drumreel is ready to use.</p>
-            <div className="mt-8">
-              <WaitlistForm />
+            <h2 className="display text-3xl md:text-4xl">Open the app</h2>
+            <p className="mt-3 max-w-md text-cream-dim">Create an account, or sign in if you already have one.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <AuthActions variant="pair" />
             </div>
             <p className="mt-4 text-xs text-cream-dim">{site.email}</p>
           </div>

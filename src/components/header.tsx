@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AuthActions } from "./auth-actions";
 import { Mark } from "./mark";
 
 export function Header() {
@@ -20,12 +21,9 @@ export function Header() {
             Questions
           </a>
         </nav>
-        <a
-          href="#waitlist"
-          className="rounded-md bg-cream px-3 py-1.5 text-[13px] font-medium text-ink hover:bg-white"
-        >
-          Request access
-        </a>
+        <div className="flex items-center gap-4">
+          <AuthActions variant="bar" />
+        </div>
       </div>
     </header>
   );

@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
+import { site } from "@/lib/site";
 
 export function Cta({
-  children = "Request access",
+  children = "Get started",
   className = "",
 }: {
   children?: ReactNode;
@@ -9,7 +10,7 @@ export function Cta({
 }) {
   return (
     <a
-      href="#waitlist"
+      href={`${site.app}/signup`}
       className={`inline-flex items-center justify-center rounded-md bg-cream px-4 py-2.5 text-sm font-medium text-ink transition hover:bg-white ${className}`}
     >
       {children}

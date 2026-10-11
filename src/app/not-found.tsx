@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Cta } from "@/components/cta";
+import { AuthActions } from "@/components/auth-actions";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
@@ -14,7 +14,7 @@ export default function NotFound() {
           <Link href="/" className="rounded-full border border-line px-5 py-3 text-sm text-cream-dim hover:text-cream">
             Home
           </Link>
-          <Cta />
+          <AuthActions variant="primary" />
         </div>
       </main>
       <Footer />
