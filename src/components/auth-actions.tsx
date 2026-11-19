@@ -37,15 +37,16 @@ export async function AuthActions({
       <div className="flex items-center gap-3">
         <a
           href={`${site.app}/login`}
-          className="text-[13px] text-[#1d1d1f]/80 transition hover:text-[#1d1d1f]"
+          className="hidden text-[13px] text-[#1d1d1f]/80 transition hover:text-[#1d1d1f] sm:inline"
         >
           Sign in
         </a>
         <a
           href={`${site.app}/signup`}
-          className="inline-flex items-center rounded-full bg-[#1d1d1f] px-3.5 py-1 text-[13px] font-medium text-white transition hover:bg-black"
+          className="inline-flex h-8 items-center rounded-full bg-[#1d1d1f] px-3 text-[13px] font-medium whitespace-nowrap text-white transition hover:bg-black sm:px-3.5"
         >
-          Try Drumreel
+          <span className="sm:hidden">Try</span>
+          <span className="hidden sm:inline">Try Drumreel</span>
         </a>
       </div>
     );

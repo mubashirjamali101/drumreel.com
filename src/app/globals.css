@@ -30,6 +30,12 @@ body {
   color: var(--cream);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-feature-settings: "ss01" on, "kern" on;
+  overflow-x: clip;
+}
+
+img,
+video {
+  max-width: 100%;
 }
 
 ::selection {
