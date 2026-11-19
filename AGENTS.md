@@ -20,6 +20,6 @@ The header, the home page, and the 404 render `AuthActions`. `src/components/cta
 
 This site stays on Vercel. The product UI stays on `app.drumreel.com`.
 
-The pitch is a smart assistant you talk to, which can also record a real page like a person. Do not put the home page back to a walkthrough-only studio. There is no public pricing section. The signed-in product opens a chat, not a run form.
+The pitch is a smart assistant you talk to, which can also record a real page like a person. Do not put the home page back to a walkthrough-only studio. There is no public pricing section. The signed-in product opens a chat, not a run form. The hero is the film's last frame, not the name Marlow. Do not caption a still with words already printed in the picture.
 
 The home page offers one copied line for Claude Code, Codex, Antigravity, Cursor, and any other agent. That line sends the agent to `/setup`. Setup is sign-in in the browser. Do not add an MCP install, a config file, or an API key to that page.

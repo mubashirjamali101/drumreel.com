@@ -4,32 +4,15 @@ import { AuthActions } from "@/components/auth-actions";
 import { CopyLine } from "@/components/copy-line";
 import { AgentShelf, SignInWindow } from "@/components/agent-shelf";
 
-const moments = [
-  {
-    src: "/films/board.jpg",
-    title: "Three things waiting.",
-    body: "Northline is the one that is ready.",
-  },
-  {
-    src: "/films/note.jpg",
-    title: "Ship Friday.",
-    body: "The note sits on the file.",
-  },
-  {
-    src: "/films/approved.jpg",
-    title: "Filed with the team.",
-    body: "Second pass. Thursday.",
-  },
-];
+const moments = ["/films/board.jpg", "/films/note.jpg", "/films/approved.jpg"];
 
 export default function Home() {
   return (
     <>
       <Header />
       <main className="overflow-x-clip">
-        <section className="px-4 pb-4 pt-12 text-center sm:px-8 sm:pt-28">
-          <p className="text-[13px] tracking-tight text-[#6e6e73]">Marlow</p>
-          <h1 className="display mx-auto mt-3 max-w-[100%] text-[clamp(2.5rem,11vw,7rem)] leading-[0.92] text-[#1d1d1f]">
+        <section className="px-4 pb-4 pt-16 text-center sm:px-8 sm:pt-28">
+          <h1 className="display mx-auto max-w-[100%] text-[clamp(2.5rem,11vw,7rem)] leading-[0.92] text-[#1d1d1f]">
             Approved.
           </h1>
           <p className="mx-auto mt-4 max-w-md px-2 text-[16px] leading-relaxed text-[#6e6e73] sm:mt-5 sm:text-[21px]">
@@ -51,54 +34,35 @@ export default function Home() {
           </video>
         </section>
 
-        <section className="pb-16 sm:pb-28">
+        <section className="pb-8 sm:pb-16">
           <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {moments.map((item) => (
-              <figure key={item.title} className="w-[min(82vw,20rem)] shrink-0 snap-start">
-                <img src={item.src} alt="" className="aspect-video w-full rounded-3xl object-cover" />
-                <figcaption className="mt-4">
-                  <h2 className="display text-[24px] leading-tight text-[#1d1d1f]">{item.title}</h2>
-                  <p className="mt-2 text-[16px] leading-relaxed text-[#6e6e73]">{item.body}</p>
-                </figcaption>
-              </figure>
+            {moments.map((src) => (
+              <img
+                key={src}
+                src={src}
+                alt=""
+                className="aspect-video w-[min(82vw,20rem)] shrink-0 snap-start rounded-3xl object-cover"
+              />
             ))}
           </div>
-          <div className="mx-auto hidden max-w-6xl gap-10 px-8 sm:grid md:grid-cols-3">
-            {moments.map((item) => (
-              <figure key={item.title}>
-                <img src={item.src} alt="" className="aspect-video w-full rounded-3xl object-cover" />
-                <figcaption className="mt-4">
-                  <h2 className="display text-[26px] leading-tight text-[#1d1d1f]">{item.title}</h2>
-                  <p className="mt-2 text-[17px] leading-relaxed text-[#6e6e73]">{item.body}</p>
-                </figcaption>
-              </figure>
+          <div className="mx-auto hidden max-w-6xl gap-6 px-8 sm:grid md:grid-cols-3">
+            {moments.map((src) => (
+              <img key={src} src={src} alt="" className="aspect-video w-full rounded-3xl object-cover" />
             ))}
           </div>
         </section>
 
         <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:px-8 sm:py-20">
             <img src="/films/project.jpg" alt="" className="aspect-video w-full rounded-3xl object-cover sm:rounded-[28px]" />
-            <div className="mt-6 max-w-xl sm:mt-8">
-              <h2 className="display text-[clamp(2rem,7vw,3.75rem)] leading-tight text-[#1d1d1f]">
-                The coast, kept quiet.
-              </h2>
-              <p className="mt-3 text-[17px] leading-relaxed text-[#6e6e73] sm:mt-4 sm:text-[19px]">
-                Homepage, second pass. The photograph is wider. The serif stays.
-              </p>
-            </div>
           </div>
         </section>
 
         <section id="talk" className="bg-[#f5f5f7]">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-28">
-            <p className="text-[13px] text-[#6e6e73]">Chat</p>
-            <h2 className="display mt-3 max-w-3xl text-[clamp(2.6rem,9vw,5.5rem)] leading-[0.95] text-[#1d1d1f]">
+            <h2 className="display max-w-3xl text-[clamp(2.6rem,9vw,5.5rem)] leading-[0.95] text-[#1d1d1f]">
               The speaking agent.
             </h2>
-            <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-[#6e6e73] sm:text-[21px]">
-              The recording agent that speaks. You talk to it. The take comes back with a voice, on the real page.
-            </p>
 
             <div className="mt-8 overflow-hidden rounded-[28px] bg-white shadow-[0_30px_70px_-46px_rgba(0,0,0,0.45)] sm:mt-12">
               <div className="border-b border-black/[0.06] px-4 py-3.5 sm:px-6">

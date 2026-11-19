@@ -14,6 +14,9 @@ export function Header() {
           <a href="#film" className="transition hover:text-[#1d1d1f]">
             Film
           </a>
+          <a href="#talk" className="transition hover:text-[#1d1d1f]">
+            Talk
+          </a>
           <a href="#agents" className="transition hover:text-[#1d1d1f]">
             Agents
           </a>
