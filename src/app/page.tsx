@@ -128,16 +128,16 @@ export default function Home() {
 
         <section id="agents" className="bg-[#1d1d1f] text-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-24">
-            <div className="grid items-end gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
-              <div>
-                <h2 className="display text-[clamp(2.6rem,9vw,5.5rem)] leading-[0.95]">One line.</h2>
-                <p className="mt-4 max-w-sm text-[17px] leading-relaxed text-white/70 sm:text-[21px]">
-                  The agent you already use. No MCP setup.
-                </p>
-              </div>
+            <div className="max-w-xl">
+              <h2 className="display text-[clamp(2.6rem,9vw,5.5rem)] leading-[0.95]">One line.</h2>
+              <p className="mt-4 max-w-sm text-[17px] leading-relaxed text-white/70 sm:text-[21px]">
+                The agent you already use. No MCP setup.
+              </p>
+            </div>
+            <div className="mt-12 sm:mt-16 sm:max-w-3xl">
               <AgentShelf />
             </div>
-            <div className="mt-4 grid items-start gap-4 sm:mt-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="mt-12 grid items-start gap-4 sm:mt-16 lg:grid-cols-[1.15fr_0.85fr]">
               <CopyLine />
               <SignInWindow />
             </div>

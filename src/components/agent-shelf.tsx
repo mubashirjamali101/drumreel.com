@@ -1,55 +1,19 @@
 const agents = [
-  { id: "claude", name: "Claude Code", face: "#e8d3c4", ink: "#2a1c14" },
-  { id: "codex", name: "Codex", face: "#17191c", ink: "#f4f1ea" },
-  { id: "anti", name: "Antigravity", face: "#d5e4f2", ink: "#16202b" },
-  { id: "cursor", name: "Cursor", face: "#e4def4", ink: "#221c2e" },
+  { name: "Claude Code", src: "/logos/claude-code.svg", mark: "h-11 sm:h-12" },
+  { name: "Codex", src: "/logos/codex.svg", mark: "h-[3.25rem] sm:h-14" },
+  { name: "Antigravity", src: "/logos/antigravity.svg", mark: "h-16 sm:h-[4.5rem]" },
+  { name: "Cursor", src: "/logos/cursor.svg", mark: "h-11 sm:h-12" },
 ] as const;
-
-function Glyph({ id, ink }: { id: (typeof agents)[number]["id"]; ink: string }) {
-  if (id === "claude") {
-    return (
-      <svg viewBox="0 0 48 48" className="h-12 w-12" aria-hidden>
-        <circle cx="24" cy="24" r="7" fill={ink} />
-        <path d="M24 6v8M24 34v8M6 24h8M34 24h8M11 11l6 6M31 31l6 6M37 11l-6 6M17 31l-6 6" stroke={ink} strokeWidth="2.4" strokeLinecap="round" />
-      </svg>
-    );
-  }
-  if (id === "codex") {
-    return (
-      <svg viewBox="0 0 48 48" className="h-12 w-12" aria-hidden>
-        <rect x="7" y="11" width="34" height="26" rx="6" stroke={ink} strokeWidth="2.2" fill="none" />
-        <path d="M16 22l5 4-5 4" stroke={ink} strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M25 30h8" stroke={ink} strokeWidth="2.2" strokeLinecap="round" />
-      </svg>
-    );
-  }
-  if (id === "anti") {
-    return (
-      <svg viewBox="0 0 48 48" className="h-12 w-12" aria-hidden>
-        <path d="M8 34c6-12 10-16 16-16s10 4 16 16" stroke={ink} strokeWidth="2.4" fill="none" strokeLinecap="round" />
-        <path d="M14 28c4-8 7-10 10-10s6 2 10 10" stroke={ink} strokeWidth="2.4" fill="none" strokeLinecap="round" />
-        <circle cx="24" cy="14" r="2.4" fill={ink} />
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 48 48" className="h-12 w-12" aria-hidden>
-      <path d="M14 8l22 16-10 2-6 12-6-30z" fill={ink} />
-    </svg>
-  );
-}
 
 export function AgentShelf() {
   return (
-    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+    <ul className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-4 sm:gap-x-4">
       {agents.map((agent) => (
-        <li
-          key={agent.id}
-          className="flex min-h-[148px] flex-col justify-between rounded-[28px] p-4 sm:min-h-[176px] sm:p-5"
-          style={{ background: agent.face, color: agent.ink }}
-        >
-          <Glyph id={agent.id} ink={agent.ink} />
-          <p className="text-[15px] font-medium tracking-tight sm:text-[16px]">{agent.name}</p>
+        <li key={agent.name} className="flex flex-col items-center text-center">
+          <span className="flex h-[4.5rem] w-full items-center justify-center sm:h-20">
+            <img src={agent.src} alt="" className={`${agent.mark} w-auto max-w-[92%] object-contain`} />
+          </span>
+          <p className="mt-3 text-[13px] tracking-tight text-white/75">{agent.name}</p>
         </li>
       ))}
     </ul>
