@@ -13,28 +13,22 @@ export function Header() {
           <div className="flex items-center gap-2">
             <span className="font-semibold text-sm tracking-tight text-white">Drumreel</span>
             <span className="rounded-full bg-indigo-500/10 px-2 py-0.5 text-[10px] font-semibold text-indigo-400 border border-indigo-500/20">
-              STUDIO
+              ASSISTANT
             </span>
           </div>
         </Link>
         <nav className="hidden items-center gap-8 text-xs font-medium text-neutral-400 md:flex">
           <a href="#interactive-studio" className="transition hover:text-white">
-            Studio
-          </a>
-          <a href="#comparison" className="transition hover:text-white">
-            Why Not Loom
+            Recording
           </a>
           <a href="#features" className="transition hover:text-white">
-            Engine
+            How it films
           </a>
           <a href="#voices" className="transition hover:text-white">
-            Voices & Presenters
-          </a>
-          <a href="#pricing" className="transition hover:text-white">
-            Pricing
+            Voice
           </a>
           <a href="#faq" className="transition hover:text-white">
-            FAQ
+            Questions
           </a>
         </nav>
         <div className="flex items-center gap-4">

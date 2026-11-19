@@ -9,13 +9,13 @@ export function VoicesSection() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs font-semibold text-purple-400 mb-4">
             <Mic className="h-3.5 w-3.5" />
-            Neural Narration & AI Presenters
+            Optional voice
           </div>
           <h2 className="display text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Give your product a voice and a human face.
+            Add a voice when you ask for one.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-cream-dim leading-relaxed">
-            Choose from neural ElevenLabs voices for narration, and add an AI talking presenter avatar in the corner to guide your users through complex flows.
+            A recording can stay silent. If you ask for narration or a presenter, the assistant requests that on the take.
           </p>
         </div>
 

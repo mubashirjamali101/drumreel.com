@@ -48,14 +48,13 @@ export function ComparisonSection() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-400 mb-4">
             <Sparkles className="h-3.5 w-3.5" />
-            The Loom Alternative for Software Teams
+            When you need a video
           </div>
           <h2 className="display text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Why teams are replacing manual screen recordings
+            Ask for the take. Do not perform it.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-cream-dim leading-relaxed">
-            Manual screen recording was designed for quick webcam messages, not polished software product walkthroughs.
-            Drumreel automates the entire production pipeline.
+            The assistant still answers ordinary questions. A recording is one more thing you can ask for, on the live page, with a pointer that moves like a person.
           </p>
         </div>
 

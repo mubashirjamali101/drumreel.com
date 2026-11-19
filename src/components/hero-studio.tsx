@@ -37,7 +37,7 @@ const DEMOS: DemoItem[] = [
     id: "signup",
     badge: "Auth Flow",
     title: "User Signup & Onboarding",
-    prompt: "Open staging, navigate through registration, fill out user profile, and verify email confirmation banner.",
+    prompt: "Record a signup on this page. Fill the form and stop on the welcome screen.",
     targetUrl: "https://staging.app.io/auth/signup",
     poster: "/demos/signup.jpg",
     video: "/demos/signup.mp4",
@@ -51,7 +51,7 @@ const DEMOS: DemoItem[] = [
     id: "filters",
     badge: "Bug Walkthrough",
     title: "Smart Filters & Query Fix",
-    prompt: "Demo the multi-select filter fix on the analytics table: apply segment, date range, and export CSV.",
+    prompt: "Record the filters on this table. Apply a segment and a date range.",
     targetUrl: "https://staging.app.io/analytics/activity",
     poster: "/demos/filters.jpg",
     video: "/demos/filters.mp4",
@@ -65,7 +65,7 @@ const DEMOS: DemoItem[] = [
     id: "gallery",
     badge: "Product Showcase",
     title: "Media Gallery & Assets",
-    prompt: "Showcase the new responsive gallery view, hover thumbnail previews, and demo lightbox inspection.",
+    prompt: "Record the gallery. Scroll, hover a card, and open it.",
     targetUrl: "https://staging.app.io/gallery/explore",
     poster: "/demos/gallery.jpg",
     video: "/demos/gallery.mp4",
@@ -79,7 +79,7 @@ const DEMOS: DemoItem[] = [
     id: "admin",
     badge: "Enterprise",
     title: "Admin Panel & RBAC Roles",
-    prompt: "Sign in with admin credentials, open user management table, elevate user permissions to Admin, and save.",
+    prompt: "Record the admin page. Open a user and change their role.",
     targetUrl: "https://staging.app.io/admin/roles",
     poster: "/demos/admin.jpg",
     video: "/demos/admin.mp4",
@@ -154,7 +154,7 @@ export function HeroStudio() {
             </div>
             <div className="ml-3 hidden sm:flex items-center gap-2 rounded-lg bg-black/40 px-3 py-1 text-xs font-mono text-neutral-400 border border-white/5">
               <span className="text-emerald-400">https://</span>
-              <span>app.drumreel.com/studio/session</span>
+              <span>app.drumreel.com/app</span>
             </div>
           </div>
 
@@ -203,7 +203,7 @@ export function HeroStudio() {
                 <div className="flex items-center justify-between text-xs text-neutral-400 mb-2">
                   <span className="flex items-center gap-1.5 font-medium text-white">
                     <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
-                    Autonomous Scenario Prompt
+                    Ask in the chat
                   </span>
                   <span className="text-[11px] text-neutral-500 font-mono">Input</span>
                 </div>

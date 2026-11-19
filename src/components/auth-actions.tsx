@@ -23,14 +23,14 @@ export async function AuthActions({
           className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-950 transition hover:bg-neutral-100 shadow-xs"
         >
           <LayoutDashboard className="h-3.5 w-3.5" />
-          Dashboard
+          Open chat
         </a>
       );
     }
     return (
       <a href={`${site.app}/app`} className={`${btnPrimary} ${className}`}>
         <LayoutDashboard className="h-4 w-4" />
-        Go to Dashboard
+        Open chat
         <ArrowRight className="h-4 w-4" />
       </a>
     );
@@ -69,14 +69,14 @@ export async function AuthActions({
     return (
       <div className={`flex flex-wrap items-center gap-3.5 ${className}`}>
         <a href={`${site.app}/signup`} className={btnPrimary}>
-          Start Recording Free
+          Open the assistant
           <ArrowRight className="h-4 w-4" />
         </a>
         <a
           href="#interactive-studio"
           className={btnQuiet}
         >
-          Explore Live Studio
+          See a recording
         </a>
       </div>
     );

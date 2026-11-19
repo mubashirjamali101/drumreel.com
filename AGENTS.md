@@ -19,3 +19,5 @@ This is Next.js 16. The `middleware.ts` file convention is gone. The landing aut
 The header, the home page, and the 404 render `AuthActions`. `src/components/cta.tsx` always links to signup and is not the signed-in control. Do not replace `AuthActions` with `Cta`. `cookies()` keeps those routes dynamic. Do not add `export const dynamic = "force-static"` or a cache that would freeze the signed-out header for a signed-in visitor.
 
 This site stays on Vercel. The product UI stays on `app.drumreel.com`.
+
+The pitch is a smart assistant you talk to, which can also record a real page like a person. Do not put the home page back to a walkthrough-only studio. There is no public pricing section. The signed-in product opens a chat, not a run form.

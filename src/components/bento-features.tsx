@@ -9,13 +9,13 @@ export function BentoFeatures() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-neutral-300 mb-4">
             <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
-            Under the Hood
+            The recording
           </div>
           <h2 className="display text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Engineered to feel 100% human.
+            The video still looks like a person did it.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-cream-dim leading-relaxed">
-            Headless browser automation usually looks robotic and glitchy. Drumreel is built on a custom physics engine that moves the mouse, types, and talks exactly like a real person.
+            Asking in chat does not turn the take into a slideshow. The pointer travels, clicks land, and typing stays at a human pace on the real page.
           </p>
         </div>
 

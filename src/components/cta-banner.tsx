@@ -12,15 +12,15 @@ export function CtaBanner() {
         <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-black p-10 sm:p-16 backdrop-blur-2xl shadow-2xl relative ring-1 ring-white/10">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3.5 py-1 text-xs font-semibold text-indigo-300 mb-6">
             <Sparkles className="h-3.5 w-3.5" />
-            Get Started in Seconds
+            Open a chat
           </div>
 
           <h2 className="display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
-            Stop recording demos. Start directing them.
+            Tell it what you need. Ask it to record when you want a video.
           </h2>
 
           <p className="mt-6 text-base sm:text-lg text-neutral-300 max-w-xl mx-auto leading-relaxed">
-            Write two sentences describing what you want shown. Drumreel records the screen, speaks the script, and cuts your video in the cloud.
+            The thread stays open. A recording of the live page shows up in the same place as the answer.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -30,15 +30,15 @@ export function CtaBanner() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400 border-t border-white/5 pt-8">
             <span className="flex items-center gap-1.5">
               <Zap className="h-3.5 w-3.5 text-amber-400" />
-              Instant cloud browser launch
+              Same chat for answers and videos
             </span>
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-              100% genuine DOM recording
+              Records the page you name
             </span>
             <span className="flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
-              ElevenLabs neural audio included
+              Pointer and typing stay human
             </span>
           </div>
         </div>
