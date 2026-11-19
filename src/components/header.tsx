@@ -11,8 +11,8 @@ export function Header() {
           <span className="text-[15px] font-medium tracking-tight text-[#1d1d1f]">Drumreel</span>
         </Link>
         <nav className="hidden text-[13px] text-[#1d1d1f]/80 md:block">
-          <a href="#work" className="transition hover:text-[#1d1d1f]">
-            Work
+          <a href="#film" className="transition hover:text-[#1d1d1f]">
+            Film
           </a>
         </nav>
         <AuthActions variant="bar" />

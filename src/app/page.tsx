@@ -1,20 +1,22 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { AuthActions } from "@/components/auth-actions";
-import { WorkExamples } from "@/components/work-examples";
 
-const capabilities = [
+const moments = [
   {
-    title: "Think it through",
-    body: "Ask the way you would ask a colleague who already knows the product. A draft, a plan, or a decision comes back ready to use.",
+    src: "/films/board.jpg",
+    title: "Three things waiting.",
+    body: "Northline is the one that is ready.",
   },
   {
-    title: "Show the real page",
-    body: "When the work is on a site, Drumreel opens that site and records it. The pointer moves. The typing is a person’s. The file returns in the thread.",
+    src: "/films/note.jpg",
+    title: "Ship Friday.",
+    body: "The note sits on the file.",
   },
   {
-    title: "Remember the place",
-    body: "The shape of a site stays with your account. The next task starts further along, not on a blank tab.",
+    src: "/films/approved.jpg",
+    title: "Filed with the team.",
+    body: "Second pass. Thursday.",
   },
 ];
 
@@ -23,53 +25,69 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="px-5 pb-24 pt-16 text-center sm:px-8 sm:pt-24">
-          <h1 className="display mx-auto max-w-4xl text-[44px] leading-[1.02] text-[#1d1d1f] sm:text-7xl lg:text-[80px]">
-            Give Drumreel the task.
+        <section className="px-5 pb-6 pt-16 text-center sm:px-8 sm:pt-28">
+          <p className="text-[13px] tracking-tight text-[#6e6e73]">Marlow</p>
+          <h1 className="display mx-auto mt-3 max-w-4xl text-[64px] leading-[0.92] text-[#1d1d1f] sm:text-8xl lg:text-[112px]">
+            Approved.
           </h1>
-          <p className="mx-auto mt-6 max-w-md text-[19px] leading-relaxed text-[#6e6e73] sm:text-[21px]">
-            A draft, a plan, or a recording of the live product. One conversation.
+          <p className="mx-auto mt-5 max-w-md text-[19px] leading-relaxed text-[#6e6e73] sm:text-[21px]">
+            Ship Friday. Filed with the team.
           </p>
-          <div className="mt-8 flex justify-center">
-            <AuthActions variant="hero" />
-          </div>
-          <div className="mt-16 sm:mt-20">
-            <WorkExamples />
-          </div>
         </section>
 
-        <section className="border-t border-black/[0.08]">
-          <div className="mx-auto grid max-w-6xl gap-16 px-5 py-24 sm:px-8 md:grid-cols-3 md:py-32">
-            {capabilities.map((item) => (
-              <div key={item.title}>
-                <h2 className="display text-[28px] leading-tight text-[#1d1d1f]">{item.title}</h2>
-                <p className="mt-3 text-[17px] leading-relaxed text-[#6e6e73]">{item.body}</p>
-              </div>
-            ))}
+        <section id="film" className="px-4 pb-20 sm:px-8 sm:pb-28">
+          <video
+            className="mx-auto aspect-video w-full max-w-6xl rounded-[28px] bg-[#1d1d1f] object-cover shadow-[0_40px_80px_-48px_rgba(0,0,0,0.55)]"
+            poster="/films/board.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+          >
+            <source src="/films/marlow.mp4" type="video/mp4" />
+          </video>
+        </section>
+
+        <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-24 sm:px-8 md:grid-cols-3 md:pb-32">
+          {moments.map((item) => (
+            <figure key={item.title}>
+              <img src={item.src} alt="" className="aspect-video w-full rounded-3xl object-cover" />
+              <figcaption className="mt-4">
+                <h2 className="display text-[26px] leading-tight text-[#1d1d1f]">{item.title}</h2>
+                <p className="mt-2 text-[17px] leading-relaxed text-[#6e6e73]">{item.body}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </section>
+
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+            <img src="/films/project.jpg" alt="" className="aspect-video w-full rounded-[28px] object-cover" />
+            <div className="mt-8 max-w-xl">
+              <h2 className="display text-4xl leading-tight text-[#1d1d1f] sm:text-6xl">The coast, kept quiet.</h2>
+              <p className="mt-4 text-[19px] leading-relaxed text-[#6e6e73]">
+                Homepage, second pass. The photograph is wider. The serif stays.
+              </p>
+            </div>
           </div>
         </section>
 
         <section className="bg-[#1d1d1f] text-white">
-          <div className="mx-auto max-w-5xl px-5 py-24 text-center sm:px-8 sm:py-32">
-            <h2 className="display text-4xl leading-tight sm:text-6xl">It records the page you mean.</h2>
-            <p className="mx-auto mt-5 max-w-md text-[17px] leading-relaxed text-white/70">
-              Not a generated clip. The live site, with a moving pointer and real typing.
-            </p>
-            <video
-              className="mt-12 aspect-video w-full rounded-2xl bg-black object-cover"
-              poster="/demos/signup.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src="/demos/signup.mp4" type="video/mp4" />
-            </video>
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-[13px] text-white/50">Northline</p>
+              <h2 className="display mt-3 text-5xl leading-[0.95] sm:text-7xl">Ship Friday</h2>
+              <p className="mt-5 max-w-sm text-[19px] leading-relaxed text-white/70">
+                The review ends on the page the team will see.
+              </p>
+            </div>
+            <img src="/films/approved.jpg" alt="" className="aspect-video w-full rounded-[28px] object-cover" />
           </div>
         </section>
 
         <section className="px-5 py-28 text-center sm:py-36">
-          <h2 className="display text-5xl text-[#1d1d1f] sm:text-7xl">Start with the task.</h2>
+          <h2 className="display text-6xl text-[#1d1d1f] sm:text-8xl">Drumreel.</h2>
           <div className="mt-8 flex justify-center">
             <AuthActions variant="primary" />
           </div>

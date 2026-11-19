@@ -5,9 +5,8 @@ export const site = {
   app: "https://app.drumreel.com",
   email: "hello@drumreel.com",
   support: "drumreel@mubashirjamali.com",
-  tagline: "The assistant for work on a live product.",
-  description:
-    "Give Drumreel the task. A draft, a plan, or a recording of the live product, in one conversation.",
+  tagline: "The live product, on film.",
+  description: "Approved. Ship Friday, filed with the team.",
 };
 
 export const hosts = [
