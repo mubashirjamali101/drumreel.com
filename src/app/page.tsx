@@ -5,19 +5,16 @@ import { WorkExamples } from "@/components/work-examples";
 
 const capabilities = [
   {
-    n: "01",
     title: "Think it through",
-    body: "Ask the way you would ask a colleague who already knows the product. Get a draft, a plan, or a decision you can send.",
+    body: "Ask the way you would ask a colleague who already knows the product. A draft, a plan, or a decision comes back ready to use.",
   },
   {
-    n: "02",
-    title: "Show the real thing",
-    body: "When the work is on a page, Drumreel opens that page and records it. The pointer moves. The typing is a person’s. The file comes back in the thread.",
+    title: "Show the real page",
+    body: "When the work is on a site, Drumreel opens that site and records it. The pointer moves. The typing is a person’s. The file returns in the thread.",
   },
   {
-    n: "03",
-    title: "Start further along",
-    body: "It keeps the shape of the sites you have opened. The next task does not begin on a blank tab.",
+    title: "Remember the place",
+    body: "The shape of a site stays with your account. The next task starts further along, not on a blank tab.",
   },
 ];
 
@@ -25,43 +22,56 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="bg-black text-white">
-        <section className="mx-auto max-w-6xl px-6 pb-20 pt-20 sm:px-8 sm:pt-28 sm:pb-28">
-          <h1 className="display max-w-4xl text-5xl text-white sm:text-7xl lg:text-[5.5rem] lg:leading-[0.95]">
+      <main>
+        <section className="px-5 pb-24 pt-16 text-center sm:px-8 sm:pt-24">
+          <h1 className="display mx-auto max-w-4xl text-[44px] leading-[1.02] text-[#1d1d1f] sm:text-7xl lg:text-[80px]">
             Give Drumreel the task.
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-neutral-300 sm:text-xl">
-            More than an answer. A draft, a plan, or a recording of the live product, in one conversation.
+          <p className="mx-auto mt-6 max-w-md text-[19px] leading-relaxed text-[#6e6e73] sm:text-[21px]">
+            A draft, a plan, or a recording of the live product. One conversation.
           </p>
-          <div className="mt-10">
+          <div className="mt-8 flex justify-center">
             <AuthActions variant="hero" />
           </div>
-        </section>
-
-        <section id="work" className="border-t border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mt-16 sm:mt-20">
             <WorkExamples />
           </div>
         </section>
 
-        <section className="border-t border-white/10">
-          <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 sm:px-8 sm:py-28 md:grid-cols-3">
+        <section className="border-t border-black/[0.08]">
+          <div className="mx-auto grid max-w-6xl gap-16 px-5 py-24 sm:px-8 md:grid-cols-3 md:py-32">
             {capabilities.map((item) => (
-              <div key={item.n}>
-                <p className="text-xs tracking-[0.14em] text-neutral-500">{item.n}</p>
-                <h2 className="display mt-4 text-3xl text-white">{item.title}</h2>
-                <p className="mt-4 text-base leading-relaxed text-neutral-400">{item.body}</p>
+              <div key={item.title}>
+                <h2 className="display text-[28px] leading-tight text-[#1d1d1f]">{item.title}</h2>
+                <p className="mt-3 text-[17px] leading-relaxed text-[#6e6e73]">{item.body}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="border-t border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8 sm:py-32">
-            <h2 className="display max-w-3xl text-4xl text-white sm:text-6xl">Start with the task.</h2>
-            <div className="mt-10">
-              <AuthActions variant="primary" />
-            </div>
+        <section className="bg-[#1d1d1f] text-white">
+          <div className="mx-auto max-w-5xl px-5 py-24 text-center sm:px-8 sm:py-32">
+            <h2 className="display text-4xl leading-tight sm:text-6xl">It records the page you mean.</h2>
+            <p className="mx-auto mt-5 max-w-md text-[17px] leading-relaxed text-white/70">
+              Not a generated clip. The live site, with a moving pointer and real typing.
+            </p>
+            <video
+              className="mt-12 aspect-video w-full rounded-2xl bg-black object-cover"
+              poster="/demos/signup.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/demos/signup.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
+
+        <section className="px-5 py-28 text-center sm:py-36">
+          <h2 className="display text-5xl text-[#1d1d1f] sm:text-7xl">Start with the task.</h2>
+          <div className="mt-8 flex justify-center">
+            <AuthActions variant="primary" />
           </div>
         </section>
       </main>

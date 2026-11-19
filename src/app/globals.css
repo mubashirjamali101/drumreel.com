@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #050505;
-  --ink-2: #0d0d0d;
-  --cream: #f5f5f4;
-  --cream-dim: #8a8a86;
-  --line: rgba(245, 245, 244, 0.1);
-  --accent: #f5f5f4;
+  --ink: #f5f5f7;
+  --ink-2: #ffffff;
+  --cream: #1d1d1f;
+  --cream-dim: #6e6e73;
+  --line: rgba(0, 0, 0, 0.08);
+  --accent: #1d1d1f;
 }
 
 @theme inline {
@@ -33,14 +33,14 @@ body {
 }
 
 ::selection {
-  background: #f5f5f4;
-  color: #050505;
+  background: #1d1d1f;
+  color: #f5f5f7;
 }
 
 .display {
   font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.045em;
 }
 
 .glass {
