@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { AuthActions } from "@/components/auth-actions";
 import { CopyLine } from "@/components/copy-line";
+import { AgentShelf, SignInWindow } from "@/components/agent-shelf";
 
 const moments = [
   {
@@ -20,8 +21,6 @@ const moments = [
     body: "Second pass. Thursday.",
   },
 ];
-
-const agents = ["Claude Code", "Codex", "Antigravity", "Cursor"];
 
 export default function Home() {
   return (
@@ -128,22 +127,20 @@ export default function Home() {
         </section>
 
         <section id="agents" className="bg-[#1d1d1f] text-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-28">
-            <h2 className="display text-[clamp(2.6rem,9vw,5.5rem)] leading-[0.95]">One line.</h2>
-            <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-[21px]">
-              Claude Code, Codex, Antigravity, Cursor, and every other agent. No MCP setup.
-            </p>
-            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[20px] tracking-tight sm:text-[28px]">
-              {agents.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-            <div className="mt-8 max-w-3xl sm:mt-10">
-              <CopyLine />
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-24">
+            <div className="grid items-end gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+              <div>
+                <h2 className="display text-[clamp(2.6rem,9vw,5.5rem)] leading-[0.95]">One line.</h2>
+                <p className="mt-4 max-w-sm text-[17px] leading-relaxed text-white/70 sm:text-[21px]">
+                  The agent you already use. No MCP setup.
+                </p>
+              </div>
+              <AgentShelf />
             </div>
-            <p className="mt-6 max-w-md text-[16px] leading-relaxed text-white/60 sm:text-[17px]">
-              The agent opens the browser. You sign in. Done.
-            </p>
+            <div className="mt-4 grid items-start gap-4 sm:mt-6 lg:grid-cols-[1.15fr_0.85fr]">
+              <CopyLine />
+              <SignInWindow />
+            </div>
           </div>
         </section>
 

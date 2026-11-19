@@ -25,12 +25,15 @@ export function CopyLine() {
   }
 
   return (
-    <div className="rounded-[28px] bg-[#1d1d1f] p-4 text-left text-white sm:p-6">
-      <p className="text-[15px] leading-relaxed break-words sm:text-[17px]">{agentLine}</p>
+    <div className="rounded-[28px] bg-white p-5 text-left text-[#1d1d1f] sm:p-7">
+      <div>
+        <p className="text-[12px] tracking-tight text-[#6e6e73]">The line</p>
+        <p className="mt-3 text-[16px] leading-relaxed break-words sm:text-[18px]">{agentLine}</p>
+      </div>
       <button
         type="button"
         onClick={copy}
-        className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-full bg-white px-5 text-[15px] font-medium text-[#1d1d1f] transition hover:bg-[#f5f5f7] sm:w-auto"
+        className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full bg-[#1d1d1f] px-5 text-[15px] font-medium text-white transition hover:bg-black sm:w-fit"
       >
         {copied ? "Copied" : "Copy the line"}
       </button>
