@@ -1,19 +1,21 @@
+import { Mark } from "./mark";
+
 const agents = [
-  { name: "Claude Code", src: "/logos/claude-code.svg", mark: "h-11 sm:h-12" },
-  { name: "Codex", src: "/logos/codex.svg", mark: "h-[3.25rem] sm:h-14" },
-  { name: "Antigravity", src: "/logos/antigravity.svg", mark: "h-16 sm:h-[4.5rem]" },
-  { name: "Cursor", src: "/logos/cursor.svg", mark: "h-11 sm:h-12" },
+  { name: "Claude Code", src: "/logos/claude-code.svg", mark: "h-7 md:h-8" },
+  { name: "Codex", src: "/logos/codex.svg", mark: "h-8 md:h-10" },
+  { name: "Antigravity", src: "/logos/antigravity.svg", mark: "h-11 md:h-14" },
+  { name: "Cursor", src: "/logos/cursor.svg", mark: "h-7 md:h-8" },
 ] as const;
 
 export function AgentShelf() {
   return (
-    <ul className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-4 sm:gap-x-4">
+    <ul className="mt-10 grid grid-cols-2 gap-x-2 gap-y-5 border-y border-white/[0.12] py-6 md:mt-14 md:flex md:items-center md:justify-between md:py-8">
       {agents.map((agent) => (
-        <li key={agent.name} className="flex flex-col items-center text-center">
-          <span className="flex h-[4.5rem] w-full items-center justify-center sm:h-20">
-            <img src={agent.src} alt="" className={`${agent.mark} w-auto max-w-[92%] object-contain`} />
+        <li key={agent.name} className="flex items-center gap-2.5 md:gap-3.5">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center md:h-14 md:w-14">
+            <img src={agent.src} alt="" className={`${agent.mark} w-auto max-w-full object-contain`} />
           </span>
-          <p className="mt-3 text-[13px] tracking-tight text-white/75">{agent.name}</p>
+          <span className="text-[14px] tracking-tight text-white/90 md:text-[16px]">{agent.name}</span>
         </li>
       ))}
     </ul>
@@ -30,9 +32,7 @@ export function SignInWindow() {
         <p className="ml-2 truncate text-[12px] text-[#6e6e73]">app.drumreel.com/login</p>
       </div>
       <div className="px-5 py-7 sm:px-7">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1d1d1f]">
-          <span className="h-3 w-3 rounded-full border border-white" />
-        </div>
+        <Mark className="h-10 w-10" />
         <p className="mt-5 text-[22px] tracking-tight">Sign in</p>
         <div className="mt-5 h-11 rounded-2xl bg-[#f5f5f7]" />
         <div className="mt-3 flex h-11 items-center justify-center rounded-full bg-[#1d1d1f] text-[14px] font-medium text-white">
