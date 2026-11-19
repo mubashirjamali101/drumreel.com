@@ -5,9 +5,9 @@ export const site = {
   app: "https://app.drumreel.com",
   email: "hello@drumreel.com",
   support: "drumreel@mubashirjamali.com",
-  tagline: "A smart assistant that records the real screen.",
+  tagline: "The assistant for work on a live product.",
   description:
-    "Talk to Drumreel like a chat. Ask it to plan, draft, or record a real page with a human pointer and typing.",
+    "Give Drumreel the task. A draft, a plan, or a recording of the live product, in one conversation.",
 };
 
 export const hosts = [

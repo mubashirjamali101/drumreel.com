@@ -23,12 +23,7 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: "Drumreel",
-  keywords: [
-    "AI assistant",
-    "screen recording",
-    "product demo video",
-    "chat",
-  ],
+  keywords: ["Drumreel", "assistant", "product recording"],
   openGraph: {
     type: "website",
     locale: "en_US",

@@ -8,12 +8,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
           <Mark className="h-5 w-5 text-white" />
-          <span className="text-sm font-semibold tracking-tight text-white">Drumreel</span>
-          <span className="text-xs text-neutral-500">•</span>
-          <span className="flex items-center gap-1.5 text-xs text-neutral-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Assistant and recorder online
-          </span>
+          <span className="text-sm text-white">Drumreel</span>
         </div>
 
         <nav className="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs font-medium text-neutral-400">
