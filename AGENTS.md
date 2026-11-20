@@ -22,4 +22,6 @@ This site stays on Vercel. The product UI stays on `app.drumreel.com`.
 
 The pitch is a smart assistant you talk to, which can also record a real page like a person. Do not put the home page back to a walkthrough-only studio. There is no public pricing section. The signed-in product opens a chat, not a run form. The hero is the film's last frame, not the name Marlow. Do not caption a still with words already printed in the picture.
 
+The public site is dark. Canvas is `#07080c`, text is `#f4f4f5`. The home page follows the Command Code landing shape: a `//` label, a large line, the film, then numbered rows. The setup line sits in a `~/drumreel` block. Do not put the light `#f5f5f7` canvas back. Do not add pricing, testimonials, or a FAQ.
+
 The home page offers one copied line for Claude Code, Codex, Antigravity, Cursor, and any other agent. That line sends the agent to `/setup`. Setup is sign-in in the browser. Do not add an MCP install, a config file, or an API key to that page.

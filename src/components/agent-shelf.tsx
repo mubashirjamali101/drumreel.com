@@ -24,21 +24,21 @@ export function AgentShelf() {
 
 export function SignInWindow() {
   return (
-    <div className="overflow-hidden rounded-[28px] bg-white text-[#1d1d1f] shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)]">
-      <div className="flex items-center gap-2 border-b border-black/[0.06] px-4 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#d8d8dc]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#d8d8dc]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#d8d8dc]" />
-        <p className="ml-2 truncate text-[12px] text-[#6e6e73]">app.drumreel.com/login</p>
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/50 text-[#f4f4f5]">
+      <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+        <p className="ml-2 truncate font-mono text-[12px] text-white/45">app.drumreel.com/login</p>
       </div>
       <div className="px-5 py-7 sm:px-7">
         <Mark className="h-10 w-10" />
         <p className="mt-5 text-[22px] tracking-tight">Sign in</p>
-        <div className="mt-5 h-11 rounded-2xl bg-[#f5f5f7]" />
-        <div className="mt-3 flex h-11 items-center justify-center rounded-full bg-[#1d1d1f] text-[14px] font-medium text-white">
+        <div className="mt-5 h-11 rounded-xl border border-white/10 bg-white/[0.04]" />
+        <div className="mt-3 flex h-11 items-center justify-center rounded-full bg-white text-[14px] font-medium text-[#07080c]">
           Continue
         </div>
-        <p className="mt-5 text-[13px] text-[#6e6e73]">The browser opens. You sign in. Done.</p>
+        <p className="mt-5 text-[13px] text-white/50">The browser opens. You sign in. Done.</p>
       </div>
     </div>
   );

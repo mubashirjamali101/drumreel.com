@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #f5f5f7;
-  --ink-2: #ffffff;
-  --cream: #1d1d1f;
-  --cream-dim: #6e6e73;
-  --line: rgba(0, 0, 0, 0.08);
-  --accent: #1d1d1f;
+  --ink: #07080c;
+  --ink-2: #101116;
+  --cream: #f4f4f5;
+  --cream-dim: #9a9aa3;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #f4f4f5;
 }
 
 @theme inline {
@@ -18,7 +18,7 @@
   --color-accent: var(--accent);
   --font-sans: var(--font-inter);
   --font-display: var(--font-inter-tight);
-  --font-mono: var(--font-inter);
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 html {
@@ -33,14 +33,26 @@ body {
   overflow-x: clip;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
 img,
 video {
   max-width: 100%;
 }
 
 ::selection {
-  background: #1d1d1f;
-  color: #f5f5f7;
+  background: #f4f4f5;
+  color: #07080c;
 }
 
 .display {

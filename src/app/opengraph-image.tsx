@@ -14,8 +14,8 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f5f5f7",
-          color: "#1d1d1f",
+          background: "#07080c",
+          color: "#f4f4f5",
           padding: "72px",
           fontFamily: "ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif",
         }}
@@ -25,9 +25,9 @@ export default function OgImage() {
           <div style={{ fontSize: 84, lineHeight: 1, maxWidth: 980, fontWeight: 600, letterSpacing: -2 }}>
             Approved.
           </div>
-          <div style={{ fontSize: 28, color: "#6e6e73" }}>Ship Friday. Filed with the team.</div>
+          <div style={{ fontSize: 28, color: "#9a9aa3" }}>Ship Friday. Filed with the team.</div>
         </div>
-        <div style={{ fontSize: 22, color: "#6e6e73" }}>drumreel.com</div>
+        <div style={{ fontSize: 22, color: "#9a9aa3" }}>drumreel.com</div>
       </div>
     ),
     { ...size },

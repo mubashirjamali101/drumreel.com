@@ -2,9 +2,9 @@ import { site } from "@/lib/site";
 import { signedIn } from "@/lib/signed-in";
 
 const btnPrimary =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-[15px] font-medium text-white transition hover:bg-black";
+  "inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-[15px] font-medium text-[#07080c] transition hover:bg-white/85";
 const btnQuiet =
-  "inline-flex items-center justify-center text-[15px] text-[#0066cc] transition hover:underline";
+  "inline-flex items-center justify-center text-[15px] text-white/70 transition hover:text-white";
 
 export async function AuthActions({
   variant,
@@ -19,7 +19,7 @@ export async function AuthActions({
       return (
         <a
           href={`${site.app}/app`}
-          className="inline-flex items-center rounded-full bg-[#1d1d1f] px-3.5 py-1 text-[13px] font-medium text-white transition hover:bg-black"
+          className="inline-flex items-center rounded-full bg-white px-3.5 py-1 text-[13px] font-medium text-[#07080c] transition hover:bg-white/85"
         >
           Open Drumreel
         </a>
@@ -37,13 +37,13 @@ export async function AuthActions({
       <div className="flex items-center gap-3">
         <a
           href={`${site.app}/login`}
-          className="hidden text-[13px] text-[#1d1d1f]/80 transition hover:text-[#1d1d1f] sm:inline"
+          className="hidden text-[13px] text-white/65 transition hover:text-white sm:inline"
         >
           Sign in
         </a>
         <a
           href={`${site.app}/signup`}
-          className="inline-flex h-8 items-center rounded-full bg-[#1d1d1f] px-3 text-[13px] font-medium whitespace-nowrap text-white transition hover:bg-black sm:px-3.5"
+          className="inline-flex h-8 items-center rounded-full bg-white px-3 text-[13px] font-medium whitespace-nowrap text-[#07080c] transition hover:bg-white/85 sm:px-3.5"
         >
           <span className="sm:hidden">Try</span>
           <span className="hidden sm:inline">Try Drumreel</span>
