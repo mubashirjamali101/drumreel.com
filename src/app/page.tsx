@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { AuthActions } from "@/components/auth-actions";
 import { CopyLine } from "@/components/copy-line";
 import { AgentShelf, SignInWindow } from "@/components/agent-shelf";
+import { stories } from "@/lib/stories";
 
 const asks: { title: string; text: string; poster: string; video?: string }[] = [
   {
@@ -113,6 +115,34 @@ export default function Home() {
                   <p className="text-[20px] tracking-tight text-white">{ask.title}</p>
                   <p className="mt-1 text-[15px] leading-snug text-white/55 sm:text-[16px]">{ask.text}</p>
                 </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="stories" className="mx-auto max-w-6xl scroll-mt-16 px-4 py-8 sm:px-8 sm:py-16">
+          <h2 className="display max-w-3xl text-[clamp(2.4rem,6vw,4.4rem)] leading-[0.94] text-white">
+            Two teams. The same ask.
+          </h2>
+          <p className="mt-4 max-w-xl text-[17px] leading-snug text-white/60 sm:text-[20px]">
+            A library of walkthroughs that would not stay true. A film for every change.
+          </p>
+          <ul className="mt-10 grid gap-4 md:grid-cols-2">
+            {stories.map((story) => (
+              <li key={story.slug}>
+                <Link
+                  href={`/stories/${story.slug}`}
+                  className="block overflow-hidden rounded-3xl border border-white/10 bg-[#101116] transition hover:border-white/25"
+                >
+                  <div className="px-5 py-6 sm:px-6 sm:py-7">
+                    <p className="text-[13px] text-white/45">{story.kicker}</p>
+                    <p className="mt-3 text-[24px] leading-tight tracking-tight text-white sm:text-[28px]">
+                      {story.title}
+                    </p>
+                    <p className="mt-3 max-w-md text-[15px] leading-snug text-white/55 sm:text-[16px]">{story.lede}</p>
+                    <p className="mt-6 text-[14px] text-white">Read the story</p>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
