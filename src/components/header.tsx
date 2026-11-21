@@ -10,15 +10,15 @@ export function Header() {
           <Mark className="h-5 w-5" />
           <span className="text-[15px] font-medium tracking-tight text-[#f4f4f5]">Drumreel</span>
         </Link>
-        <nav className="hidden items-center gap-5 font-mono text-[12px] text-white/55 md:flex">
+        <nav className="hidden items-center gap-6 text-[14px] text-white/60 md:flex">
           <a href="#film" className="transition hover:text-white">
-            // film
+            Film
           </a>
-          <a href="#talk" className="transition hover:text-white">
-            // talk
+          <a href="#asks" className="transition hover:text-white">
+            Asks
           </a>
           <a href="#agents" className="transition hover:text-white">
-            // agents
+            Agents
           </a>
         </nav>
         <AuthActions variant="bar" />

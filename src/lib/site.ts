@@ -6,7 +6,7 @@ export const site = {
   email: "hello@drumreel.com",
   support: "drumreel@mubashirjamali.com",
   tagline: "The live product, on film.",
-  description: "The speaking agent for a live product. One line connects the agent you already use.",
+  description: "They ask for a video of the change. Drumreel writes the note and films the real page.",
 };
 
 export const hosts = [

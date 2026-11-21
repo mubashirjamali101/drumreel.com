@@ -20,8 +20,8 @@ The header, the home page, and the 404 render `AuthActions`. `src/components/cta
 
 This site stays on Vercel. The product UI stays on `app.drumreel.com`.
 
-The home page names four asks under They asked for a video: the change, the bug, how do I, and filming a stale tutorial again. The talk example includes the note to send and the film. The pitch is a smart assistant you talk to, which can also record a real page like a person. Do not put the home page back to a walkthrough-only studio. There is no public pricing section. The signed-in product opens a chat, not a run form. The hero is the film's last frame, not the name Marlow. Do not caption a still with words already printed in the picture.
+The home page names four asks: the change, the bug, how do I, and filming a stale tutorial again. Each ask is a real film, not a numbered text row. The hero is the product: the note to send beside the film of the real page. The pitch is a smart assistant you talk to, which can also record a real page like a person. Do not put the home page back to a walkthrough-only studio, and do not put it back to a sparse poster with only the word Approved. There is no public pricing section. The signed-in product opens a chat, not a run form. Do not caption a still with words already printed in the picture. Do not label the hero Marlow.
 
-The public site is dark. Canvas is `#07080c`, text is `#f4f4f5`. The home page follows the Command Code landing shape: a `//` label, a large line, the film, then numbered rows. The setup line sits in a `~/drumreel` block. Do not put the light `#f5f5f7` canvas back. Do not add pricing, testimonials, or a FAQ.
+The public site is dark. Canvas is `#07080c`, text is `#f4f4f5`. The setup line sits in the agents section. Do not put the light `#f5f5f7` canvas back. Do not add pricing, testimonials, a FAQ, or a feature grid of icons.
 
 The home page offers one copied line for Claude Code, Codex, Antigravity, Cursor, and any other agent. That line sends the agent to `/setup`. Setup is sign-in in the browser. Do not add an MCP install, a config file, or an API key to that page.
